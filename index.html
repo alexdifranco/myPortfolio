@@ -4,12 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alex DiFranco — Engineering Portfolio</title>
-<link rel="icon" href="photos/logo.png">
-<meta property="og:title" content="Alex DiFranco — Engineering Portfolio">
-<meta property="og:description" content="Mechanical engineering portfolio — RC dynamometer project, photography, and more.">
-<meta property="og:image" content="photos/logo.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="photos/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Outfit:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -397,7 +391,7 @@ body {
   border-left:3px solid var(--b1);
   padding:2.5rem 3rem; margin-bottom:3.5rem; position:relative; overflow:hidden;
 }
-.proj-banner::after { content:'V1'; position:absolute; right:2.5rem; top:50%; transform:translateY(-50%); font-family:var(--orb); font-size:8rem; font-weight:900; color:var(--b0); opacity:.05; }
+.proj-banner::after { content:'V2'; position:absolute; right:2.5rem; top:50%; transform:translateY(-50%); font-family:var(--orb); font-size:8rem; font-weight:900; color:var(--b0); opacity:.05; }
 .proj-banner.no-wm::after { content:none; }
 .pb-label { font-family:var(--mono); font-size:.62rem; letter-spacing:.15em; text-transform:uppercase; color:var(--b2); margin-bottom:.75rem; }
 .pb-h { font-family:var(--orb); font-size:1.6rem; letter-spacing:.03em; margin-bottom:.75rem; }
@@ -895,7 +889,7 @@ body {
     <span class="pf-txt">Alex DiFranco · Engineering Portfolio · 2026</span>
     <div style="display:flex;gap:1.5rem">
       <a class="pf-link" href="#" onclick="go('contact');return false;">Contact</a>
-      <a class="pf-link" href="https://github.com/alexdifranco" target="_blank">GitHub</a>
+      <a class="pf-link" href="https://github.com/DudePerson1010" target="_blank">GitHub</a>
     </div>
   </div>
 </div>
@@ -964,7 +958,7 @@ body {
     <div class="act-layout">
       <div class="rv">
         <div class="act-col-t">Activities & Experience</div>
-        <div class="act-c"><div class="act-line"></div><div><div class="act-n">RC Dynamometer — Self-Directed</div><div class="act-d">Designing and building a low-cost RC dynamometer to measure vehicle performance directly — currently on V1: a Hall-sensor-based rig with a desk-clip stand, with data logging and RC-car tuning planned next.</div></div></div>
+        <div class="act-c"><div class="act-line"></div><div><div class="act-n">RC Dynamometer — Self-Directed</div><div class="act-d">Designing and building a low-cost RC dynamometer to measure vehicle performance directly — now on V2: a roller-based rig with a magnetically-mounted, floating sensor for hands-free, low-vibration runs. RC-car tuning (V3) is planned next.</div></div></div>
         <div class="act-c"><div class="act-line"></div><div><div class="act-n">Coding & Software Projects</div><div class="act-d">Building programming skills through AP Computer Science with growing interest in applying code to engineering data pipelines and automation.</div></div></div>
         <div class="act-c"><div class="act-line"></div><div><div class="act-n">Student Government</div><div class="act-d">Active member contributing to school initiatives and developing collaborative leadership skills alongside technical work.</div></div></div>
         <div class="act-c"><div class="act-line"></div><div><div class="act-n">Photography</div><div class="act-d">Automotive, industrial, and architectural photography — analytical eye expressed through visual storytelling.</div></div></div>
@@ -989,28 +983,24 @@ body {
   <div class="container spad">
     <div class="eyebrow rv">02 — Featured Project</div>
     <h2 class="h2 rv" style="margin-bottom:.75rem">Building an RC<br><span class="accent">Dynamometer</span></h2>
-    <p class="dim rv" style="font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;margin-bottom:3rem">From a simple speed sensor to a performance testing platform</p>
+    <p class="dim rv" style="font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;margin-bottom:3rem">From a simple speed sensor to a roller-based testing rig</p>
 
     <div class="proj-banner rv">
       <div class="pb-label">// Self-Directed Engineering Project — 2024–2026</div>
       <div class="pb-h">Problem: I wanted to optimize RC vehicle performance, but had no reliable way to actually measure whether a change made a difference.</div>
-      <p class="pb-d">Solution: I designed and built a low-cost RC dynamometer — a custom testing instrument that measures vehicle performance directly, rather than guessing from feel. The RC car is the test subject; the dyno is the actual engineering deliverable. It touches mechanical design (frame, mounting, vibration control), electrical sensing (Hall-effect sensor + magnet), and physics (RPM, speed, rotational motion) — with data logging and RC-car tuning as the next phases.</p>
+      <p class="pb-d">Solution: I designed and built a low-cost RC dynamometer — a custom testing instrument that measures vehicle performance directly, rather than guessing from feel. The RC car is the test subject; the dyno is the actual engineering deliverable. It touches mechanical design (frame, mounting, vibration control), electrical sensing (Hall-effect sensor + magnet), and physics (RPM, speed, rotational motion). V0 was just learning the sensor and roughing out a design, V1 proved the concept, V2 is a full roller rig built for consistent, hands-free runs, and RC-car tuning (V3) is next.</p>
     </div>
-
-    <div class="gal rv">
-      <div class="gal-c" onclick="openBuildViewer(0)"><img class="gal-img" src="photos/project/build1.png" alt="Dyno V1 — Full Rig"><div class="gal-l">Dyno V1 — Full Rig</div></div>
-      <div class="gal-c" onclick="openBuildViewer(1)"><img class="gal-img" src="photos/project/build2.png" alt="Full Rig No Car"><div class="gal-l">Full Rig No Car</div></div>
-      <div class="gal-c" onclick="openBuildViewer(2)"><img class="gal-img" src="photos/project/build3.png" alt="Magnet on Wheel"><div class="gal-l">Magnet on Wheel</div></div>
-      <div class="gal-c" onclick="openBuildViewer(3)"><img class="gal-img" src="photos/project/build4.png" alt="Desk-Clip Stand"><div class="gal-l">Desk-Clip Stand</div></div>
-      <div class="gal-c" onclick="openBuildViewer(4)"><img class="gal-img" src="photos/project/build5.png" alt="Circuit Setup"><div class="gal-l">Circuit Setup</div></div>
-    </div>
-
-    <!--
-    ENGINEERING ROADMAP — hidden for now since V2/V3 haven't been built yet.
-    Bring this back once the roller system (Phase 2) actually exists.
 
     <div class="eyebrow rv" style="margin-bottom:1.5rem">Engineering Roadmap</div>
     <div class="phases rv">
+      <div class="ph"><div class="ph-n">00</div><div class="ph-tag">// Phase Zero — Complete</div><div class="ph-t">Learn the Sensor & Plan the Design</div>
+        <ul class="ph-l">
+          <li>Goal: understand how the Hall sensor actually works before building anything</li>
+          <li>Wired the sensor up on a breadboard, no mount, no stand — just learning</li>
+          <li>Sketched out a few stand/clip concepts without committing to one</li>
+          <li>No working rig yet, purely research and planning</li>
+        </ul>
+      </div>
       <div class="ph"><div class="ph-n">01</div><div class="ph-tag">// Phase One — Complete</div><div class="ph-t">Build the Dyno</div>
         <ul class="ph-l">
           <li>Goal: can I accurately measure RPM and wheel speed?</li>
@@ -1019,12 +1009,12 @@ body {
           <li>Converts sensor pulses into RPM and top/max wheel speed</li>
         </ul>
       </div>
-      <div class="ph"><div class="ph-n">02</div><div class="ph-tag">// Phase Two — Next</div><div class="ph-t">Build a Roller System</div>
+      <div class="ph"><div class="ph-n">02</div><div class="ph-tag">// Phase Two — Complete</div><div class="ph-t">Build a Roller System</div>
         <ul class="ph-l">
           <li>Goal: get consistent, repeatable runs instead of one-off spins</li>
-          <li>Simple roller setup so the wheel drives against something fixed, not just spinning free on a clip stand</li>
-          <li>Should cut down a lot of the wobble and skew I'm seeing in V1 data</li>
-          <li>Log RPM/speed over time instead of single readings</li>
+          <li>Designed and built a custom roller on ball bearings (it just ended up looking like a paint roller), went through three stand designs before one actually held still</li>
+          <li>Vibration was the real fight — switching to the smallest magnet I had killed it completely</li>
+          <li>Sensor board now floats on a 3D-printed mount held in place by magnets — fully hands-free</li>
         </ul>
       </div>
       <div class="ph"><div class="ph-n">03</div><div class="ph-tag">// Phase Three — Planned</div><div class="ph-t">Tune the RC Car</div>
@@ -1036,16 +1026,49 @@ body {
         </ul>
       </div>
     </div>
-    -->
 
-    <div class="eyebrow rv" style="margin-top:4rem;margin-bottom:1.5rem">Current Build — V1</div>
-    <div class="vers rv">
-      <div class="vb"><div class="vb-bg">01</div><div class="vb-tag">// Frame & Mount</div><div class="vb-t">Desk-Clip Stand</div><div class="vb-d">A simple stand that clips right into my desk, keeping the rig fixed while the car runs. It's not perfect — the desk itself has a little give — but it's enough to get a real reading.</div></div>
-      <div class="vb"><div class="vb-bg">02</div><div class="vb-tag">// Sensing System</div><div class="vb-t">Hall Sensor + Magnet</div><div class="vb-d">A magnet is taped to the wheel and a Hall-effect sensor is propped nearby to catch the signal on every rotation — the core electrical system that makes any measurement possible.</div></div>
-      <div class="vb"><div class="vb-bg">03</div><div class="vb-tag">// Measurement Method</div><div class="vb-t">RPM → Speed</div><div class="vb-d">The car's own motor spins the wheel — I'm not spinning it by hand. What I am doing by hand is holding the chassis down, since it vibrates like crazy on the stand at full throttle. Sensor pulses get converted into RPM and top speed. Basic, but it works, and it's the foundation Phase 2 builds on.</div></div>
+    <div class="divider"></div>
+
+    <div class="eyebrow rv" style="margin-bottom:1.5rem">V0 — Learning & Planning</div>
+
+    <!-- V0 GALLERY: drop your V0 photos into photos/project/ named v0build1.png through v0build3.png and they'll show up here automatically. -->
+    <div class="gal rv" style="grid-template-columns:1fr 1fr 1fr;grid-template-rows:220px">
+      <div class="gal-c" onclick="openV0BuildViewer(0)" style="grid-row:auto"><img class="gal-img" src="photos/project/v0build1.png" alt="Hall Sensor Breadboard Test"><div class="gal-l">Hall Sensor Breadboard Test</div></div>
+      <div class="gal-c" onclick="openV0BuildViewer(1)"><img class="gal-img" src="photos/project/v0build2.png" alt="Early Stand Sketches"><div class="gal-l">Early Stand Sketches</div></div>
+      <div class="gal-c" onclick="openV0BuildViewer(2)"><img class="gal-img" src="photos/project/v0build3.png" alt="Clip Prototype Attempt"><div class="gal-l">Clip Prototype Attempt</div></div>
     </div>
 
-    <div class="eyebrow rv" style="margin-top:4rem;margin-bottom:1.5rem">How It Works</div>
+    <div class="vers rv" style="margin-top:2.5rem">
+      <div class="vb"><div class="vb-bg">00</div><div class="vb-tag">// Learning</div><div class="vb-t">Hall Sensor Basics</div><div class="vb-d">Before building anything, I wired the Hall sensor up on a breadboard just to see it respond to a magnet — no mount, no stand, just confirming I actually understood how the sensor and magnet talk to each other.</div></div>
+      <div class="vb"><div class="vb-bg">00</div><div class="vb-tag">// Design</div><div class="vb-t">Stand Concepts</div><div class="vb-d">Sketched out a handful of ways to clip a sensor mount to my desk. Nothing was built yet — just figuring out what a workable clip design would even look like before committing to one.</div></div>
+      <div class="vb"><div class="vb-bg">00</div><div class="vb-tag">// Status</div><div class="vb-t">No Working Mount Yet</div><div class="vb-d">There was no desk-clip, no fixed rig, nothing measuring RPM. V0 was entirely about learning the sensor and roughing out a design before V1 turned any of it into something that actually worked.</div></div>
+    </div>
+
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:1.5rem">Lessons From V0</div>
+    <div class="findings rv">
+      <div class="fnd"><div class="fnd-i">🔌</div><div class="fnd-t">Understand the Sensor Before You Mount It</div><div class="fnd-d">Wiring the Hall sensor up loose on a breadboard first meant I actually understood its behavior before I designed anything around it — saved me from building a mount around a part I didn't fully get yet.</div></div>
+      <div class="fnd"><div class="fnd-i">✏️</div><div class="fnd-t">Sketch Before You Build</div><div class="fnd-d">Going through a few stand and clip ideas on paper first saved me from wasting material on a design that wouldn't actually hold still — that groundwork is exactly what V1's desk-clip stand came out of.</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="eyebrow rv" style="margin-bottom:1.5rem">V1 — Original Build</div>
+
+    <div class="gal rv">
+      <div class="gal-c" onclick="openBuildViewer(0)"><img class="gal-img" src="photos/project/build1.png" alt="Dyno V1 — Full Rig"><div class="gal-l">Dyno V1 — Full Rig</div></div>
+      <div class="gal-c" onclick="openBuildViewer(1)"><img class="gal-img" src="photos/project/build2.png" alt="Full Rig No Car"><div class="gal-l">Full Rig No Car</div></div>
+      <div class="gal-c" onclick="openBuildViewer(2)"><img class="gal-img" src="photos/project/build3.png" alt="Magnet on Wheel"><div class="gal-l">Magnet on Wheel</div></div>
+      <div class="gal-c" onclick="openBuildViewer(3)"><img class="gal-img" src="photos/project/build4.png" alt="Desk-Clip Stand"><div class="gal-l">Desk-Clip Stand</div></div>
+      <div class="gal-c" onclick="openBuildViewer(4)"><img class="gal-img" src="photos/project/build5.png" alt="Circuit Setup"><div class="gal-l">Circuit Setup</div></div>
+    </div>
+
+    <div class="vers rv" style="margin-top:2.5rem">
+      <div class="vb"><div class="vb-bg">01</div><div class="vb-tag">// Frame & Mount</div><div class="vb-t">Desk-Clip Stand</div><div class="vb-d">A simple stand that clips right into my desk, keeping the rig fixed while the car runs. It's not perfect — the desk itself has a little give — but it's enough to get a real reading.</div></div>
+      <div class="vb"><div class="vb-bg">02</div><div class="vb-tag">// Sensing System</div><div class="vb-t">Hall Sensor + Magnet</div><div class="vb-d">A magnet is taped to the wheel and a Hall-effect sensor is propped nearby to catch the signal on every rotation — the core electrical system that makes any measurement possible.</div></div>
+      <div class="vb"><div class="vb-bg">03</div><div class="vb-tag">// Measurement Method</div><div class="vb-t">RPM → Speed</div><div class="vb-d">The car's own motor spins the wheel — I'm not spinning it by hand. What I am doing by hand is holding the chassis down, since it vibrates like crazy on the stand at full throttle. Sensor pulses get converted into RPM and top speed. Basic, but it works, and it's the foundation V2 builds on.</div></div>
+    </div>
+
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:1.5rem">How It Works — V1</div>
     <div class="flow rv">
       <div class="flow-step">
         <div class="flow-n">01</div>
@@ -1078,22 +1101,87 @@ body {
       </div>
     </div>
 
-    <div class="eyebrow rv" style="margin-bottom:.5rem">Results — V1 Testing</div>
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:.5rem">Results — V1 Testing</div>
     <p class="dim rv" style="font-family:var(--mono);font-size:.75rem;line-height:1.7;max-width:640px;margin-bottom:.5rem">Average RPM and average speed below are each computed from 5 independent 30-second trials.</p>
     <p class="dim rv" style="font-family:var(--mono);font-size:.75rem;line-height:1.7;max-width:640px;margin-bottom:1.5rem">Heads up — this data isn't perfectly clean. It takes the wheel a second to actually spin up to top speed, so early readings in each trial pull the average down a bit. There's also some wobble in the numbers from the car's own wheel plus a little give in the desk itself. Not perfect, but it's a real baseline to build on.</p>
     <div class="charts-grid rv" id="trial-charts"></div>
 
-    <div class="eyebrow rv" style="margin-top:4rem;margin-bottom:1.5rem">Lessons From Building V1</div>
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:1.5rem">Lessons From Building V1</div>
     <div class="findings rv">
       <div class="fnd"><div class="fnd-i">📐</div><div class="fnd-t">Vibration Control First</div><div class="fnd-d">A rig that shakes gives noisy readings before you've measured anything. Solving the mounting problem first — with a simple desk-clip stand — turned out to matter more than the sensor itself.</div></div>
       <div class="fnd"><div class="fnd-i">🧲</div><div class="fnd-t">A Clean Signal Beats a Complex One</div><div class="fnd-d">One magnet and one Hall sensor is about as simple as a sensing system gets, but it gives a clean, reliable pulse per rotation — enough to calculate RPM without needing anything more complicated yet.</div></div>
       <div class="fnd"><div class="fnd-i">🔁</div><div class="fnd-t">Prove the Concept Before Adding Complexity</div><div class="fnd-d">It would've been easy to jump straight to rollers, logging, and graphs. Building the simplest possible version first confirmed the core idea — measuring RPM and speed — actually works.</div></div>
     </div>
 
+    <div class="divider"></div>
+
+    <div class="eyebrow rv" style="margin-bottom:1.5rem">V2 — Roller System (Current Build)</div>
+
+    <!-- V2 GALLERY: drop your V2 photos into photos/project/ named v2build1.png through v2build5.png and they'll show up here automatically. -->
+    <div class="gal rv">
+      <div class="gal-c" onclick="openV2BuildViewer(0)"><img class="gal-img" src="photos/project/v2build1.png" alt="Roller Rig — Full Build"><div class="gal-l">Roller Rig — Full Build</div></div>
+      <div class="gal-c" onclick="openV2BuildViewer(1)"><img class="gal-img" src="photos/project/v2build2.png" alt="Custom Roller on Bearings"><div class="gal-l">Custom Roller on Bearings</div></div>
+      <div class="gal-c" onclick="openV2BuildViewer(2)"><img class="gal-img" src="photos/project/v2build3.png" alt="Floating Sensor Mount"><div class="gal-l">Floating Sensor Mount</div></div>
+      <div class="gal-c" onclick="openV2BuildViewer(3)"><img class="gal-img" src="photos/project/v2build4.png" alt="Magnetic Mount Underside"><div class="gal-l">Magnetic Mount Underside</div></div>
+      <div class="gal-c" onclick="openV2BuildViewer(4)"><img class="gal-img" src="photos/project/v2build5.png" alt="Breadboard Wire Extension"><div class="gal-l">Breadboard Wire Extension</div></div>
+    </div>
+
+    <div class="vers rv" style="margin-top:2.5rem;grid-template-columns:repeat(2,1fr)">
+      <div class="vb"><div class="vb-bg">01</div><div class="vb-tag">// Frame & Drive</div><div class="vb-t">Custom-Built Roller</div><div class="vb-d">The roller itself is something I designed and built myself — it just happens to look like a paint roller. Runs on ball bearings, mounted to a stand with hot glue. Took three different stand designs before landing on one that actually held still under load.</div></div>
+      <div class="vb"><div class="vb-bg">02</div><div class="vb-tag">// Vibration Fix</div><div class="vb-t">Tiny Magnet, Zero Vibration</div><div class="vb-d">Any magnet bigger than the smallest one I had threw the whole rig into insane vibration at speed. Dropping down to the smallest magnet available fixed it completely — zero vibration.</div></div>
+      <div class="vb"><div class="vb-bg">03</div><div class="vb-tag">// Sensor Mount</div><div class="vb-t">Hands-Free Floating Mount</div><div class="vb-d">A press-fit 3D-printed bracket holds the Hall sensor board. A strong magnet on the bracket pairs with another mounted under the desk, so the whole sensor mount snaps into place — no hands, no holding anything. Just pull the trigger on the car.</div></div>
+      <div class="vb"><div class="vb-bg">04</div><div class="vb-tag">// Wiring Fix</div><div class="vb-t">Staples as Conductors</div><div class="vb-d">With the roller mounted at 90°, the breadboard connections needed more reach to clear it. Plugged spare staples straight into the breadboard as conductive material to extend the connections upward and out of the way — actual tape is only used to hold the tiny magnet onto the roller.</div></div>
+    </div>
+
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:1.5rem">How It Works — V2</div>
+    <div class="flow rv">
+      <div class="flow-step">
+        <div class="flow-n">01</div>
+        <div class="flow-t">Pull the Trigger</div>
+        <div class="flow-d">Car's wheel drives the roller directly — completely hands-free</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-n">02</div>
+        <div class="flow-t">Roller Spins</div>
+        <div class="flow-d">The custom-built roller spins on ball bearings</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-n">03</div>
+        <div class="flow-t">Magnet Passes Sensor</div>
+        <div class="flow-d">A tiny magnet on the roller sweeps past the floating sensor mount once per rotation</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-n">04</div>
+        <div class="flow-t">Electrical Pulse</div>
+        <div class="flow-d">Hall-effect sensor fires a pulse each time the magnet passes</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="flow-n">05</div>
+        <div class="flow-t">RPM & MPH Calculated</div>
+        <div class="flow-d">Updated code counts pulses, ignores the first 5 seconds of startup, and converts the rest into RPM and MPH over a 30-second run</div>
+      </div>
+    </div>
+
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:.5rem">Results — V2 Testing</div>
+    <p class="dim rv" style="font-family:var(--mono);font-size:.75rem;line-height:1.7;max-width:640px;margin-bottom:.5rem">Average RPM and average speed below are each computed from 5 independent 30-second trials.</p>
+    <p class="dim rv" style="font-family:var(--mono);font-size:.75rem;line-height:1.7;max-width:640px;margin-bottom:1.5rem">Way tighter than V1 — the roller and floating sensor mount killed most of the noise. Run 5 dips a bit below the rest, which lines up with the battery starting to sag by the end of the session. Results clearly depend a lot on battery voltage, so that's something to track alongside RPM/MPH going forward.</p>
+    <div class="charts-grid rv" id="trial-charts-v2"></div>
+
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:1.5rem">Lessons From Building V2</div>
+    <div class="findings rv">
+      <div class="fnd"><div class="fnd-i">🧲</div><div class="fnd-t">Smaller Magnet, Zero Vibration</div><div class="fnd-d">I assumed a bigger magnet meant a stronger, more reliable signal. Instead it threw the whole roller off balance at speed. The smallest magnet I owned turned out to be the fix — zero vibration.</div></div>
+      <div class="fnd"><div class="fnd-i">🧊</div><div class="fnd-t">Let the Sensor Float</div><div class="fnd-d">Holding the sensor board by hand was its own source of vibration. Mounting it on a magnetic, press-fit bracket got my hands out of the equation entirely — the rig runs itself now.</div></div>
+      <div class="fnd"><div class="fnd-i">📎</div><div class="fnd-t">Staples as Conductive Extensions</div><div class="fnd-d">Didn't have the right length wire on hand, so I plugged spare staples straight into the breadboard as conductive material to extend the connections up and clear of the roller. Cheap, effective, and honestly kind of satisfying.</div></div>
+    </div>
+
     <div class="proj-banner no-wm rv" style="margin-top:4rem;margin-bottom:0">
       <div class="pb-label">// What's Next</div>
-      <div class="pb-h" style="font-size:1.3rem">Stay tuned for the next versions.</div>
-      <p class="pb-d">V2 (roller system) and V3 (RC tuning) are still on the roadmap — I just haven't built them yet. Once they're up and running, this page gets updated.</p>
+      <div class="pb-h" style="font-size:1.3rem">More versions coming.</div>
+      <p class="pb-d">V3 (RC tuning) is next on the roadmap — I just haven't built it yet. In the meantime, I'm running full V2 test sessions once the batteries are charged, and this page will get updated with real trial data soon.</p>
     </div>
   </div>
   <div class="pf"><span class="pf-txt">Project — RC Dynamometer</span><a class="pf-link" href="#" onclick="go('code');return false;">Next: Build Code →</a></div>
@@ -1116,10 +1204,10 @@ body {
       <!-- Nature -->
       <div class="album-cover" onclick="openAlbum('nature')">
         <div class="album-thumb-grid">
-          <div class="album-thumb"><img src="photos/nature/nature2.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/nature/nature7.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/nature/nature13.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/nature/nature44.png" alt=""></div>
+          <div class="album-thumb"><img src="photos/nature/nature2.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/nature/nature7.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/nature/nature13.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/nature/nature44.jpg" alt=""></div>
         </div>
         <div class="album-info-overlay">
           <div class="album-title">NATURE</div>
@@ -1131,10 +1219,10 @@ body {
       <!-- Cars -->
       <div class="album-cover" onclick="openAlbum('cars')">
         <div class="album-thumb-grid">
-          <div class="album-thumb"><img src="photos/cars/car19.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/cars/car11.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/cars/car12.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/cars/car29.png" alt=""></div>
+          <div class="album-thumb"><img src="photos/cars/car19.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/cars/car11.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/cars/car12.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/cars/car29.jpg" alt=""></div>
         </div>
         <div class="album-info-overlay">
           <div class="album-title">CARS</div>
@@ -1146,10 +1234,10 @@ body {
       <!-- Cities -->
       <div class="album-cover" onclick="openAlbum('cities')">
         <div class="album-thumb-grid">
-          <div class="album-thumb"><img src="photos/city/city1.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/city/city2.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/city/city3.png" alt=""></div>
-          <div class="album-thumb"><img src="photos/city/city4.png" alt=""></div>
+          <div class="album-thumb"><img src="photos/city/city1.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/city/city2.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/city/city3.jpg" alt=""></div>
+          <div class="album-thumb"><img src="photos/city/city4.jpg" alt=""></div>
         </div>
         <div class="album-info-overlay">
           <div class="album-title">CITIES</div>
@@ -1202,7 +1290,7 @@ body {
       <div class="contact-links rv">
         <a href="mailto:scartu200909@gmail.com" class="cl"><div><div class="cl-k">Email</div><div class="cl-v">scartu200909@gmail.com</div></div><span class="cl-ar">→</span></a>
         <a href="tel:9148862412" class="cl"><div><div class="cl-k">Phone</div><div class="cl-v">(914) 886-2412</div></div><span class="cl-ar">→</span></a>
-        <a href="https://github.com/alexdifranco" class="cl" target="_blank"><div><div class="cl-k">GitHub</div><div class="cl-v">github.com/alexdifranco</div></div><span class="cl-ar">→</span></a>
+        <a href="https://github.com/DudePerson1010" class="cl" target="_blank"><div><div class="cl-k">GitHub</div><div class="cl-v">github.com/DudePerson1010</div></div><span class="cl-ar">→</span></a>
         <a href="https://www.linkedin.com/in/alexander-difranco-922452418" class="cl" target="_blank"><div><div class="cl-k">LinkedIn</div><div class="cl-v">linkedin.com/in/alexander-difranco</div></div><span class="cl-ar">→</span></a>
         <div class="cl" style="cursor:default"><div><div class="cl-k">School</div><div class="cl-v">Eastchester High School, NY — Class of 2027</div></div></div>
         <div class="cl" style="cursor:default"><div><div class="cl-k">Intended Major</div><div class="cl-v">Mechanical Engineering</div></div></div>
@@ -1365,7 +1453,354 @@ void countPulse() {
   pulseCount++;
 }</pre>
     </div>
-    <p class="dim rv" style="font-family:var(--mono);font-size:.72rem;line-height:1.7;max-width:640px">V2's code will go here once the roller system is built.</p>
+
+    <div class="eyebrow rv" style="margin-top:3rem;margin-bottom:1.5rem">V2 — Roller Dyno with Auto Run Detection</div>
+    <p class="dim rv" style="font-family:var(--mono);font-size:.72rem;line-height:1.7;max-width:640px;margin-bottom:1.5rem">Rewritten for the roller rig. A run starts automatically on the first Hall signal, throws out the first 5 seconds of data (startup spin-up), and reports average/max RPM and MPH once the roller has been still for 2 seconds or 30 seconds have passed.</p>
+    <div class="code-panel rv">
+      <div class="code-panel-hd">
+        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        <span class="code-panel-title">// dyno_v2.ino</span>
+      </div>
+      <pre class="code-block">const int hallPin = 2;
+
+const int runningLed = 8;
+const int finishedLed = 13;
+
+// =========================
+// SETTINGS
+// =========================
+
+const unsigned long TEST_DURATION = 30000;     // 30 seconds
+const unsigned long STARTUP_EXCLUSION = 5000;  // Ignore first 5 sec in averages
+
+const unsigned long RPM_INTERVAL = 500;        // Calculate every 0.5 sec
+
+const int ZERO_INTERVAL_LIMIT = 4;             // 4 × 500ms = 2 seconds
+
+const float rollerDiameterMM = 25.0;            // Your roller diameter
+const int magnetsPerRevolution = 1;
+
+// =========================
+// VARIABLES
+// =========================
+
+volatile long pulseCount = 0;
+
+unsigned long lastCalcTime = 0;
+unsigned long runStartTime = 0;
+
+bool runActive = false;
+
+int zeroIntervals = 0;
+
+// Statistics
+long rpmSum = 0;
+int rpmSamples = 0;
+
+int maxRPM = 0;
+float maxMPH = 0;
+
+// =========================
+// SETUP
+// =========================
+
+void setup() {
+
+  pinMode(hallPin, INPUT);
+
+  pinMode(runningLed, OUTPUT);
+  pinMode(finishedLed, OUTPUT);
+
+  digitalWrite(runningLed, LOW);
+  digitalWrite(finishedLed, HIGH);
+
+  Serial.begin(9600);
+
+  Serial.println();
+  Serial.println("================================");
+  Serial.println("      RC ROLLER DYNO V2");
+  Serial.println("================================");
+  Serial.println("Ready.");
+  Serial.println("Waiting for first Hall signal...");
+  Serial.println();
+
+  attachInterrupt(
+    digitalPinToInterrupt(hallPin),
+    countPulse,
+    FALLING
+  );
+}
+
+// =========================
+// MAIN LOOP
+// =========================
+
+void loop() {
+
+  unsigned long now = millis();
+
+  // ---------------------------------
+  // CALCULATE RPM EVERY 500ms
+  // ---------------------------------
+
+  if (now - lastCalcTime >= RPM_INTERVAL) {
+
+    lastCalcTime = now;
+
+    // Safely copy pulse count
+    noInterrupts();
+
+    long pulses = pulseCount;
+    pulseCount = 0;
+
+    interrupts();
+
+    // ---------------------------------
+    // IF RUN IS NOT ACTIVE
+    // ---------------------------------
+
+    if (!runActive) {
+
+      // First Hall signal starts the run
+      if (pulses > 0) {
+
+        runActive = true;
+
+        runStartTime = now;
+
+        zeroIntervals = 0;
+
+        rpmSum = 0;
+        rpmSamples = 0;
+
+        maxRPM = 0;
+        maxMPH = 0;
+
+        digitalWrite(runningLed, HIGH);
+        digitalWrite(finishedLed, LOW);
+
+        Serial.println();
+        Serial.println("================================");
+        Serial.println("         RUN STARTED");
+        Serial.println("================================");
+        Serial.println("30 second timer started!");
+        Serial.println();
+      }
+
+      return;
+    }
+
+    // ---------------------------------
+    // RUN IS ACTIVE
+    // ---------------------------------
+
+    unsigned long elapsed = now - runStartTime;
+
+    // ---------------------------------
+    // CALCULATE RPM
+    // ---------------------------------
+
+    int rpm = 0;
+
+    if (pulses > 0) {
+
+      rpm = (pulses * 60000L) /
+            RPM_INTERVAL /
+            magnetsPerRevolution;
+
+      // We got movement, reset zero counter
+      zeroIntervals = 0;
+
+    } else {
+
+      // No pulses this interval
+      rpm = 0;
+
+      zeroIntervals++;
+
+    }
+
+    // ---------------------------------
+    // CALCULATE MPH
+    // ---------------------------------
+
+    float circumferenceMM =
+      rollerDiameterMM * 3.14159;
+
+    float mph =
+      rpm * circumferenceMM * 60.0 /
+      1609344.0;
+
+    // ---------------------------------
+    // DISPLAY LIVE DATA
+    // ---------------------------------
+
+    Serial.print("Time: ");
+    Serial.print(elapsed / 1000.0, 1);
+
+    Serial.print("s | RPM: ");
+    Serial.print(rpm);
+
+    Serial.print(" | MPH: ");
+    Serial.print(mph, 2);
+
+    // Tell us if this is startup data
+    if (elapsed < STARTUP_EXCLUSION) {
+      Serial.println(" | STARTUP");
+    } else {
+      Serial.println(" | DATA");
+    }
+
+    // ---------------------------------
+    // RECORD MAXIMUMS
+    // ---------------------------------
+
+    if (rpm > maxRPM) {
+      maxRPM = rpm;
+    }
+
+    if (mph > maxMPH) {
+      maxMPH = mph;
+    }
+
+    // ---------------------------------
+    // RECORD AVERAGES
+    // ---------------------------------
+
+    // Only record averages after startup period
+    if (elapsed >= STARTUP_EXCLUSION) {
+
+      if (rpm > 0) {
+
+        rpmSum += rpm;
+        rpmSamples++;
+      }
+    }
+
+    // ---------------------------------
+    // STOP IF ZERO FOR 2 SECONDS
+    // ---------------------------------
+
+    if (zeroIntervals >= ZERO_INTERVAL_LIMIT) {
+
+      Serial.println();
+      Serial.println("No movement detected for 2 seconds.");
+
+      finishRun(false);
+
+      return;
+    }
+
+    // ---------------------------------
+    // STOP AT 30 SECONDS
+    // ---------------------------------
+
+    if (elapsed >= TEST_DURATION) {
+
+      finishRun(true);
+
+      return;
+    }
+  }
+}
+
+// =========================
+// FINISH RUN
+// =========================
+
+void finishRun(bool completed) {
+
+  runActive = false;
+
+  digitalWrite(runningLed, LOW);
+  digitalWrite(finishedLed, HIGH);
+
+  // Calculate averages
+  float avgRPM = 0;
+
+  if (rpmSamples > 0) {
+    avgRPM = (float)rpmSum / rpmSamples;
+  }
+
+  float circumferenceMM =
+    rollerDiameterMM * 3.14159;
+
+  float avgMPH =
+    avgRPM * circumferenceMM * 60.0 /
+    1609344.0;
+
+  Serial.println();
+  Serial.println("================================");
+
+  if (completed) {
+    Serial.println("       30 SECOND RUN COMPLETE");
+  } else {
+    Serial.println("          INCOMPLETE RUN");
+  }
+
+  Serial.println("================================");
+
+  Serial.print("Run Time: ");
+
+  if (completed) {
+    Serial.println("30.00 seconds");
+  } else {
+    unsigned long actualTime =
+      millis() - runStartTime;
+
+    Serial.print(actualTime / 1000.0, 2);
+    Serial.println(" seconds");
+  }
+
+  Serial.println();
+
+  Serial.println("--- RESULTS ---");
+
+  Serial.print("Average RPM: ");
+  Serial.println(avgRPM, 1);
+
+  Serial.print("Average MPH: ");
+  Serial.println(avgMPH, 2);
+
+  Serial.print("Max RPM: ");
+  Serial.println(maxRPM);
+
+  Serial.print("Max MPH: ");
+  Serial.println(maxMPH, 2);
+
+  Serial.println();
+
+  if (!completed) {
+    Serial.println("Run was NOT counted as a valid");
+    Serial.println("30-second test.");
+  } else {
+    Serial.println("Valid 30-second test.");
+  }
+
+  Serial.println();
+  Serial.println("================================");
+  Serial.println("Ready for next run.");
+  Serial.println("================================");
+  Serial.println();
+
+  // Reset statistics for next run
+  zeroIntervals = 0;
+  rpmSum = 0;
+  rpmSamples = 0;
+  maxRPM = 0;
+  maxMPH = 0;
+}
+
+// =========================
+// HALL SENSOR INTERRUPT
+// =========================
+
+void countPulse() {
+
+  pulseCount++;
+}</pre>
+    </div>
+    <p class="dim rv" style="font-family:var(--mono);font-size:.72rem;line-height:1.7;max-width:640px">V3's code will go here once RC tuning starts.</p>
   </div>
   <div class="pf"><span class="pf-txt">Build Code — Alex DiFranco</span><a class="pf-link" href="#" onclick="go('photo');return false;">Next: Photography →</a></div>
 </div>
@@ -1414,13 +1849,19 @@ document.querySelectorAll('.page').forEach(p=>{
 });
 
 /* ========================================================
-   DYNO TEST TRIALS — V1 Results
+   DYNO TEST TRIALS — V1 & V2 Results
    Fill in real readings per metric below. Averages, max
    values, and the bar chart update automatically.
    ======================================================== */
 const dynoTrials = {
   rpm:   { unit: 'RPM', values: [1721, 1989, 1995, 1849, 2012], max: 2160 },
   speed: { unit: 'mph', values: [15.84, 13.71, 16.73, 13.96, 15.23], max: 17.2 }
+};
+
+// V2 trials — 5 real 30-second runs
+const dynoTrialsV2 = {
+  rpm:   { unit: 'RPM', values: [6261.2, 6254.1, 6268.2, 6188.2, 5967.1], max: 6360 },
+  speed: { unit: 'mph', values: [18.33, 18.31, 18.35, 18.12, 17.47], max: 18.62 }
 };
 
 function renderTrialChart(container, label, unit, values, max) {
@@ -1459,11 +1900,20 @@ function renderTrialChart(container, label, unit, values, max) {
 
 function renderAllTrialCharts() {
   const grid = document.getElementById('trial-charts');
-  if(!grid) return;
-  grid.innerHTML = '<div class="chart-c"></div><div class="chart-c"></div>';
-  const [rpmC, speedC] = grid.children;
-  renderTrialChart(rpmC, 'Average RPM', dynoTrials.rpm.unit, dynoTrials.rpm.values, dynoTrials.rpm.max);
-  renderTrialChart(speedC, 'Average Speed', dynoTrials.speed.unit, dynoTrials.speed.values, dynoTrials.speed.max);
+  if(grid) {
+    grid.innerHTML = '<div class="chart-c"></div><div class="chart-c"></div>';
+    const [rpmC, speedC] = grid.children;
+    renderTrialChart(rpmC, 'Average RPM', dynoTrials.rpm.unit, dynoTrials.rpm.values, dynoTrials.rpm.max);
+    renderTrialChart(speedC, 'Average Speed', dynoTrials.speed.unit, dynoTrials.speed.values, dynoTrials.speed.max);
+  }
+
+  const gridV2 = document.getElementById('trial-charts-v2');
+  if(gridV2) {
+    gridV2.innerHTML = '<div class="chart-c"></div><div class="chart-c"></div>';
+    const [rpmC2, speedC2] = gridV2.children;
+    renderTrialChart(rpmC2, 'Average RPM', dynoTrialsV2.rpm.unit, dynoTrialsV2.rpm.values, dynoTrialsV2.rpm.max);
+    renderTrialChart(speedC2, 'Average Speed', dynoTrialsV2.speed.unit, dynoTrialsV2.speed.values, dynoTrialsV2.speed.max);
+  }
 }
 renderAllTrialCharts();
 
@@ -1489,8 +1939,29 @@ function openBuildViewer(index) {
   openViewer(index);
 }
 
-/* ========================================================
+const buildImagesV2 = [
+  { src: 'photos/project/v2build1.png', label: 'Roller Rig — Full Build' },
+  { src: 'photos/project/v2build2.png', label: 'Custom Roller on Bearings' },
+  { src: 'photos/project/v2build3.png', label: 'Floating Sensor Mount' },
+  { src: 'photos/project/v2build4.png', label: 'Magnetic Mount Underside' },
+  { src: 'photos/project/v2build5.png', label: 'Breadboard Wire Extension' },
+];
+function openV2BuildViewer(index) {
+  viewerImages = buildImagesV2;
+  openViewer(index);
+}
 
+const buildImagesV0 = [
+  { src: 'photos/project/v0build1.png', label: 'Hall Sensor Breadboard Test' },
+  { src: 'photos/project/v0build2.png', label: 'Early Stand Sketches' },
+  { src: 'photos/project/v0build3.png', label: 'Clip Prototype Attempt' },
+];
+function openV0BuildViewer(index) {
+  viewerImages = buildImagesV0;
+  openViewer(index);
+}
+
+/* ========================================================
    ALBUM SYSTEM
    ======================================================== */
 const albumData = {
@@ -1498,150 +1969,150 @@ const albumData = {
     title: 'NATURE',
     eyebrow: '04.1 — Nature Album',
     slots: [
-      { src: 'photos/nature/nature1.png', label: 'Nature Photo 1' },
-      { src: 'photos/nature/nature2.png', label: 'Nature Photo 2' },
-      { src: 'photos/nature/nature3.png', label: 'Nature Photo 3' },
-      { src: 'photos/nature/nature4.png', label: 'Nature Photo 4' },
-      { src: 'photos/nature/nature5.png', label: 'Nature Photo 5' },
-      { src: 'photos/nature/nature6.png', label: 'Nature Photo 6' },
-      { src: 'photos/nature/nature7.png', label: 'Nature Photo 7' },
-      { src: 'photos/nature/nature8.png', label: 'Nature Photo 8' },
-      { src: 'photos/nature/nature9.png', label: 'Nature Photo 9' },
-      { src: 'photos/nature/nature10.png', label: 'Nature Photo 10' },
-      { src: 'photos/nature/nature11.png', label: 'Nature Photo 11' },
-      { src: 'photos/nature/nature12.png', label: 'Nature Photo 12' },
-      { src: 'photos/nature/nature13.png', label: 'Nature Photo 13' },
-      { src: 'photos/nature/nature14.png', label: 'Nature Photo 14' },
-      { src: 'photos/nature/nature15.png', label: 'Nature Photo 15' },
-      { src: 'photos/nature/nature16.png', label: 'Nature Photo 16' },
-      { src: 'photos/nature/nature17.png', label: 'Nature Photo 17' },
-      { src: 'photos/nature/nature18.png', label: 'Nature Photo 18' },
-      { src: 'photos/nature/nature19.png', label: 'Nature Photo 19' },
-      { src: 'photos/nature/nature20.png', label: 'Nature Photo 20' },
-      { src: 'photos/nature/nature21.png', label: 'Nature Photo 21' },
-      { src: 'photos/nature/nature22.png', label: 'Nature Photo 22' },
-      { src: 'photos/nature/nature23.png', label: 'Nature Photo 23' },
-      { src: 'photos/nature/nature24.png', label: 'Nature Photo 24' },
-      { src: 'photos/nature/nature25.png', label: 'Nature Photo 25' },
-      { src: 'photos/nature/nature26.png', label: 'Nature Photo 26' },
-      { src: 'photos/nature/nature27.png', label: 'Nature Photo 27' },
-      { src: 'photos/nature/nature28.png', label: 'Nature Photo 28' },
-      { src: 'photos/nature/nature29.png', label: 'Nature Photo 29' },
-      { src: 'photos/nature/nature30.png', label: 'Nature Photo 30' },
-      { src: 'photos/nature/nature31.png', label: 'Nature Photo 31' },
-      { src: 'photos/nature/nature32.png', label: 'Nature Photo 32' },
-      { src: 'photos/nature/nature33.png', label: 'Nature Photo 33' },
-      { src: 'photos/nature/nature34.png', label: 'Nature Photo 34' },
-      { src: 'photos/nature/nature35.png', label: 'Nature Photo 35' },
-      { src: 'photos/nature/nature36.png', label: 'Nature Photo 36' },
-      { src: 'photos/nature/nature37.png', label: 'Nature Photo 37' },
-      { src: 'photos/nature/nature38.png', label: 'Nature Photo 38' },
-      { src: 'photos/nature/nature39.png', label: 'Nature Photo 39' },
-      { src: 'photos/nature/nature40.png', label: 'Nature Photo 40' },
-      { src: 'photos/nature/nature41.png', label: 'Nature Photo 41' },
-      { src: 'photos/nature/nature42.png', label: 'Nature Photo 42' },
-      { src: 'photos/nature/nature43.png', label: 'Nature Photo 43' },
-      { src: 'photos/nature/nature44.png', label: 'Nature Photo 44' },
-      { src: 'photos/nature/nature45.png', label: 'Nature Photo 45' },
-      { src: 'photos/nature/nature46.png', label: 'Nature Photo 46' },
-      { src: 'photos/nature/nature47.png', label: 'Nature Photo 47' },
-      { src: 'photos/nature/nature48.png', label: 'Nature Photo 48' },
-      { src: 'photos/nature/nature49.png', label: 'Nature Photo 49' },
-      { src: 'photos/nature/nature50.png', label: 'Nature Photo 50' },
+      { src: 'photos/nature/nature1.jpg', label: 'Nature Photo 1' },
+      { src: 'photos/nature/nature2.jpg', label: 'Nature Photo 2' },
+      { src: 'photos/nature/nature3.jpg', label: 'Nature Photo 3' },
+      { src: 'photos/nature/nature4.jpg', label: 'Nature Photo 4' },
+      { src: 'photos/nature/nature5.jpg', label: 'Nature Photo 5' },
+      { src: 'photos/nature/nature6.jpg', label: 'Nature Photo 6' },
+      { src: 'photos/nature/nature7.jpg', label: 'Nature Photo 7' },
+      { src: 'photos/nature/nature8.jpg', label: 'Nature Photo 8' },
+      { src: 'photos/nature/nature9.jpg', label: 'Nature Photo 9' },
+      { src: 'photos/nature/nature10.jpg', label: 'Nature Photo 10' },
+      { src: 'photos/nature/nature11.jpg', label: 'Nature Photo 11' },
+      { src: 'photos/nature/nature12.jpg', label: 'Nature Photo 12' },
+      { src: 'photos/nature/nature13.jpg', label: 'Nature Photo 13' },
+      { src: 'photos/nature/nature14.jpg', label: 'Nature Photo 14' },
+      { src: 'photos/nature/nature15.jpg', label: 'Nature Photo 15' },
+      { src: 'photos/nature/nature16.jpg', label: 'Nature Photo 16' },
+      { src: 'photos/nature/nature17.jpg', label: 'Nature Photo 17' },
+      { src: 'photos/nature/nature18.jpg', label: 'Nature Photo 18' },
+      { src: 'photos/nature/nature19.jpg', label: 'Nature Photo 19' },
+      { src: 'photos/nature/nature20.jpg', label: 'Nature Photo 20' },
+      { src: 'photos/nature/nature21.jpg', label: 'Nature Photo 21' },
+      { src: 'photos/nature/nature22.jpg', label: 'Nature Photo 22' },
+      { src: 'photos/nature/nature23.jpg', label: 'Nature Photo 23' },
+      { src: 'photos/nature/nature24.jpg', label: 'Nature Photo 24' },
+      { src: 'photos/nature/nature25.jpg', label: 'Nature Photo 25' },
+      { src: 'photos/nature/nature26.jpg', label: 'Nature Photo 26' },
+      { src: 'photos/nature/nature27.jpg', label: 'Nature Photo 27' },
+      { src: 'photos/nature/nature28.jpg', label: 'Nature Photo 28' },
+      { src: 'photos/nature/nature29.jpg', label: 'Nature Photo 29' },
+      { src: 'photos/nature/nature30.jpg', label: 'Nature Photo 30' },
+      { src: 'photos/nature/nature31.jpg', label: 'Nature Photo 31' },
+      { src: 'photos/nature/nature32.jpg', label: 'Nature Photo 32' },
+      { src: 'photos/nature/nature33.jpg', label: 'Nature Photo 33' },
+      { src: 'photos/nature/nature34.jpg', label: 'Nature Photo 34' },
+      { src: 'photos/nature/nature35.jpg', label: 'Nature Photo 35' },
+      { src: 'photos/nature/nature36.jpg', label: 'Nature Photo 36' },
+      { src: 'photos/nature/nature37.jpg', label: 'Nature Photo 37' },
+      { src: 'photos/nature/nature38.jpg', label: 'Nature Photo 38' },
+      { src: 'photos/nature/nature39.jpg', label: 'Nature Photo 39' },
+      { src: 'photos/nature/nature40.jpg', label: 'Nature Photo 40' },
+      { src: 'photos/nature/nature41.jpg', label: 'Nature Photo 41' },
+      { src: 'photos/nature/nature42.jpg', label: 'Nature Photo 42' },
+      { src: 'photos/nature/nature43.jpg', label: 'Nature Photo 43' },
+      { src: 'photos/nature/nature44.jpg', label: 'Nature Photo 44' },
+      { src: 'photos/nature/nature45.jpg', label: 'Nature Photo 45' },
+      { src: 'photos/nature/nature46.jpg', label: 'Nature Photo 46' },
+      { src: 'photos/nature/nature47.jpg', label: 'Nature Photo 47' },
+      { src: 'photos/nature/nature48.jpg', label: 'Nature Photo 48' },
+      { src: 'photos/nature/nature49.jpg', label: 'Nature Photo 49' },
+      { src: 'photos/nature/nature50.jpg', label: 'Nature Photo 50' },
     ]
   },
   cars: {
     title: 'CARS',
     eyebrow: '04.2 — Cars Album',
     slots: [
-      { src: 'photos/cars/cars1.png', label: 'Car Photo 1' },
-      { src: 'photos/cars/car2.png', label: 'Car Photo 2' },
-      { src: 'photos/cars/car3.png', label: 'Car Photo 3' },
-      { src: 'photos/cars/car4.png', label: 'Car Photo 4' },
-      { src: 'photos/cars/car5.png', label: 'Car Photo 5' },
-      { src: 'photos/cars/car6.png', label: 'Car Photo 6' },
-      { src: 'photos/cars/car7.png', label: 'Car Photo 7' },
-      { src: 'photos/cars/car8.png', label: 'Car Photo 8' },
-      { src: 'photos/cars/car9.png', label: 'Car Photo 9' },
-      { src: 'photos/cars/car10.png', label: 'Car Photo 10' },
-      { src: 'photos/cars/car11.png', label: 'Car Photo 11' },
-      { src: 'photos/cars/car12.png', label: 'Car Photo 12' },
-      { src: 'photos/cars/car13.png', label: 'Car Photo 13' },
-      { src: 'photos/cars/car14.png', label: 'Car Photo 14' },
-      { src: 'photos/cars/car15.png', label: 'Car Photo 15' },
-      { src: 'photos/cars/car16.png', label: 'Car Photo 16' },
-      { src: 'photos/cars/car17.png', label: 'Car Photo 17' },
-      { src: 'photos/cars/car18.png', label: 'Car Photo 18' },
-      { src: 'photos/cars/car19.png', label: 'Car Photo 19' },
-      { src: 'photos/cars/car20.png', label: 'Car Photo 20' },
-      { src: 'photos/cars/car21.png', label: 'Car Photo 21' },
-      { src: 'photos/cars/car22.png', label: 'Car Photo 22' },
-      { src: 'photos/cars/car23.png', label: 'Car Photo 23' },
-      { src: 'photos/cars/car24.png', label: 'Car Photo 24' },
-      { src: 'photos/cars/car25.png', label: 'Car Photo 25' },
-      { src: 'photos/cars/car26.png', label: 'Car Photo 26' },
-      { src: 'photos/cars/car27.png', label: 'Car Photo 27' },
-      { src: 'photos/cars/car28.png', label: 'Car Photo 28' },
-      { src: 'photos/cars/car29.png', label: 'Car Photo 29' },
-      { src: 'photos/cars/car30.png', label: 'Car Photo 30' },
-      { src: 'photos/cars/car31.png', label: 'Car Photo 31' },
-      { src: 'photos/cars/car32.png', label: 'Car Photo 32' },
-      { src: 'photos/cars/car33.png', label: 'Car Photo 33' },
-      { src: 'photos/cars/car34.png', label: 'Car Photo 34' },
-      { src: 'photos/cars/car35.png', label: 'Car Photo 35' },
-      { src: 'photos/cars/car36.png', label: 'Car Photo 36' },
-      { src: 'photos/cars/car37.png', label: 'Car Photo 37' },
-      { src: 'photos/cars/car38.png', label: 'Car Photo 38' },
-      { src: 'photos/cars/car39.png', label: 'Car Photo 39' },
-      { src: 'photos/cars/car40.png', label: 'Car Photo 40' },
-      { src: 'photos/cars/car41.png', label: 'Car Photo 41' },
-      { src: 'photos/cars/car42.png', label: 'Car Photo 42' },
-      { src: 'photos/cars/car43.png', label: 'Car Photo 43' },
-      { src: 'photos/cars/car44.png', label: 'Car Photo 44' },
-      { src: 'photos/cars/car45.png', label: 'Car Photo 45' },
-      { src: 'photos/cars/car46.png', label: 'Car Photo 46' },
-      { src: 'photos/cars/car47.png', label: 'Car Photo 47' },
-      { src: 'photos/cars/car48.png', label: 'Car Photo 48' },
-      { src: 'photos/cars/car49.png', label: 'Car Photo 49' },
-      { src: 'photos/cars/car50.png', label: 'Car Photo 50' },
+      { src: 'photos/cars/car1.jpg', label: 'Car Photo 1' },
+      { src: 'photos/cars/car2.jpg', label: 'Car Photo 2' },
+      { src: 'photos/cars/car3.jpg', label: 'Car Photo 3' },
+      { src: 'photos/cars/car4.jpg', label: 'Car Photo 4' },
+      { src: 'photos/cars/car5.jpg', label: 'Car Photo 5' },
+      { src: 'photos/cars/car6.jpg', label: 'Car Photo 6' },
+      { src: 'photos/cars/car7.jpg', label: 'Car Photo 7' },
+      { src: 'photos/cars/car8.jpg', label: 'Car Photo 8' },
+      { src: 'photos/cars/car9.jpg', label: 'Car Photo 9' },
+      { src: 'photos/cars/car10.jpg', label: 'Car Photo 10' },
+      { src: 'photos/cars/car11.jpg', label: 'Car Photo 11' },
+      { src: 'photos/cars/car12.jpg', label: 'Car Photo 12' },
+      { src: 'photos/cars/car13.jpg', label: 'Car Photo 13' },
+      { src: 'photos/cars/car14.jpg', label: 'Car Photo 14' },
+      { src: 'photos/cars/car15.jpg', label: 'Car Photo 15' },
+      { src: 'photos/cars/car16.jpg', label: 'Car Photo 16' },
+      { src: 'photos/cars/car17.jpg', label: 'Car Photo 17' },
+      { src: 'photos/cars/car18.jpg', label: 'Car Photo 18' },
+      { src: 'photos/cars/car19.jpg', label: 'Car Photo 19' },
+      { src: 'photos/cars/car20.jpg', label: 'Car Photo 20' },
+      { src: 'photos/cars/car21.jpg', label: 'Car Photo 21' },
+      { src: 'photos/cars/car22.jpg', label: 'Car Photo 22' },
+      { src: 'photos/cars/car23.jpg', label: 'Car Photo 23' },
+      { src: 'photos/cars/car24.jpg', label: 'Car Photo 24' },
+      { src: 'photos/cars/car25.jpg', label: 'Car Photo 25' },
+      { src: 'photos/cars/car26.jpg', label: 'Car Photo 26' },
+      { src: 'photos/cars/car27.jpg', label: 'Car Photo 27' },
+      { src: 'photos/cars/car28.jpg', label: 'Car Photo 28' },
+      { src: 'photos/cars/car29.jpg', label: 'Car Photo 29' },
+      { src: 'photos/cars/car30.jpg', label: 'Car Photo 30' },
+      { src: 'photos/cars/car31.jpg', label: 'Car Photo 31' },
+      { src: 'photos/cars/car32.jpg', label: 'Car Photo 32' },
+      { src: 'photos/cars/car33.jpg', label: 'Car Photo 33' },
+      { src: 'photos/cars/car34.jpg', label: 'Car Photo 34' },
+      { src: 'photos/cars/car35.jpg', label: 'Car Photo 35' },
+      { src: 'photos/cars/car36.jpg', label: 'Car Photo 36' },
+      { src: 'photos/cars/car37.jpg', label: 'Car Photo 37' },
+      { src: 'photos/cars/car38.jpg', label: 'Car Photo 38' },
+      { src: 'photos/cars/car39.jpg', label: 'Car Photo 39' },
+      { src: 'photos/cars/car40.jpg', label: 'Car Photo 40' },
+      { src: 'photos/cars/car41.jpg', label: 'Car Photo 41' },
+      { src: 'photos/cars/car42.jpg', label: 'Car Photo 42' },
+      { src: 'photos/cars/car43.jpg', label: 'Car Photo 43' },
+      { src: 'photos/cars/car44.jpg', label: 'Car Photo 44' },
+      { src: 'photos/cars/car45.jpg', label: 'Car Photo 45' },
+      { src: 'photos/cars/car46.jpg', label: 'Car Photo 46' },
+      { src: 'photos/cars/car47.jpg', label: 'Car Photo 47' },
+      { src: 'photos/cars/car48.jpg', label: 'Car Photo 48' },
+      { src: 'photos/cars/car49.jpg', label: 'Car Photo 49' },
+      { src: 'photos/cars/car50.jpg', label: 'Car Photo 50' },
     ]
   },
   cities: {
-  title: 'CITIES',
-  eyebrow: '04.3 — Cities Album',
-  slots: [
-    { src: 'photos/city/city1.png', label: 'City Photo 1' },
-    { src: 'photos/city/city2.png', label: 'City Photo 2' },
-    { src: 'photos/city/city3.png', label: 'City Photo 3' },
-    { src: 'photos/city/city4.png', label: 'City Photo 4' },
-    { src: 'photos/city/city5.png', label: 'City Photo 5' },
-    { src: 'photos/city/city6.png', label: 'City Photo 6' },
-    { src: 'photos/city/city7.png', label: 'City Photo 7' },
-    { src: 'photos/city/city8.png', label: 'City Photo 8' },
-    { src: 'photos/city/city9.png', label: 'City Photo 9' },
-    { src: 'photos/city/city10.png', label: 'City Photo 10' },
-    { src: 'photos/city/city11.png', label: 'City Photo 11' },
-    { src: 'photos/city/city12.png', label: 'City Photo 12' },
-    { src: 'photos/city/city13.png', label: 'City Photo 13' },
-    { src: 'photos/city/city14.png', label: 'City Photo 14' },
-    { src: 'photos/city/city15.png', label: 'City Photo 15' },
-    { src: 'photos/city/city16.png', label: 'City Photo 16' },
-    { src: 'photos/city/city17.png', label: 'City Photo 17' },
-    { src: 'photos/city/city18.png', label: 'City Photo 18' },
-    { src: 'photos/city/city19.png', label: 'City Photo 19' },
-    { src: 'photos/city/city20.png', label: 'City Photo 20' },
-    { src: 'photos/city/city21.png', label: 'City Photo 21' },
-    { src: 'photos/city/city22.png', label: 'City Photo 22' },
-    { src: 'photos/city/city23.png', label: 'City Photo 23' },
-    { src: 'photos/city/city24.png', label: 'City Photo 24' },
-    { src: 'photos/city/city25.png', label: 'City Photo 25' },
-    { src: 'photos/city/city26.png', label: 'City Photo 26' },
-    { src: 'photos/city/city27.png', label: 'City Photo 27' },
-    { src: 'photos/city/city28.png', label: 'City Photo 28' },
-    { src: 'photos/city/city29.png', label: 'City Photo 29' },
-    { src: 'photos/city/city30.png', label: 'City Photo 30' },
-  ]
-}
+    title: 'CITIES',
+    eyebrow: '04.3 — Cities Album',
+    slots: [
+      { src: 'photos/city/city1.jpg', label: 'City Photo 1' },
+      { src: 'photos/city/city2.jpg', label: 'City Photo 2' },
+      { src: 'photos/city/city3.jpg', label: 'City Photo 3' },
+      { src: 'photos/city/city4.jpg', label: 'City Photo 4' },
+      { src: 'photos/city/city5.jpg', label: 'City Photo 5' },
+      { src: 'photos/city/city6.jpg', label: 'City Photo 6' },
+      { src: 'photos/city/city7.jpg', label: 'City Photo 7' },
+      { src: 'photos/city/city8.jpg', label: 'City Photo 8' },
+      { src: 'photos/city/city9.jpg', label: 'City Photo 9' },
+      { src: 'photos/city/city10.jpg', label: 'City Photo 10' },
+      { src: 'photos/city/city11.jpg', label: 'City Photo 11' },
+      { src: 'photos/city/city12.jpg', label: 'City Photo 12' },
+      { src: 'photos/city/city13.jpg', label: 'City Photo 13' },
+      { src: 'photos/city/city14.jpg', label: 'City Photo 14' },
+      { src: 'photos/city/city15.jpg', label: 'City Photo 15' },
+      { src: 'photos/city/city16.jpg', label: 'City Photo 16' },
+      { src: 'photos/city/city17.jpg', label: 'City Photo 17' },
+      { src: 'photos/city/city18.jpg', label: 'City Photo 18' },
+      { src: 'photos/city/city19.jpg', label: 'City Photo 19' },
+      { src: 'photos/city/city20.jpg', label: 'City Photo 20' },
+      { src: 'photos/city/city21.jpg', label: 'City Photo 21' },
+      { src: 'photos/city/city22.jpg', label: 'City Photo 22' },
+      { src: 'photos/city/city23.jpg', label: 'City Photo 23' },
+      { src: 'photos/city/city24.jpg', label: 'City Photo 24' },
+      { src: 'photos/city/city25.jpg', label: 'City Photo 25' },
+      { src: 'photos/city/city26.jpg', label: 'City Photo 26' },
+      { src: 'photos/city/city27.jpg', label: 'City Photo 27' },
+      { src: 'photos/city/city28.jpg', label: 'City Photo 28' },
+      { src: 'photos/city/city29.jpg', label: 'City Photo 29' },
+      { src: 'photos/city/city30.jpg', label: 'City Photo 30' },
+    ]
+  }
 };
 
 let currentAlbum = null;
