@@ -16,15 +16,19 @@ body { margin:0; background:var(--bg); color:var(--text); font-family:'Outfit',A
 h1, h2, h3 { font-family:'Orbitron',sans-serif; line-height:1.2; }
 h1 { color:var(--light); font-size:clamp(2.4rem,7vw,3.8rem); }
 h2 { color:var(--light); border-bottom:3px solid var(--blue); display:inline-block; padding-bottom:4px; font-size:clamp(1.9rem,5vw,2.6rem); }
-h3 { color:#fff; font-size:clamp(1.4rem,3.5vw,1.8rem); }
+h3 { scroll-margin-top:90px; color:#fff; font-size:clamp(1.4rem,3.5vw,1.8rem); }
 h4 { color:var(--light); margin:28px 0 8px; font-size:1.35rem; }
 a { color:var(--light); }
-nav { position:sticky; top:0; background:var(--box); border-bottom:3px solid var(--blue); padding:14px 24px; display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; z-index:5; }
-nav .name { font-family:'Orbitron',sans-serif; font-weight:700; font-size:1.5rem; letter-spacing:1px; color:#fff; text-decoration:none; margin-right:auto; }
-nav a { text-decoration:none; color:#fff; padding:6px 14px; border-radius:20px; }
-nav a:hover { background:var(--blue); color:#fff; }
-nav .name:hover { background:none; color:#fff; }
-section { scroll-margin-top:80px; max-width:1000px; margin:0 auto; padding:56px 20px; border-bottom:1px solid var(--line); }
+nav { position:sticky; top:0; z-index:10; background:rgba(47,123,255,0.3); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:2px solid rgba(98,184,255,0.6); padding:12px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
+nav a { color:#fff; text-decoration:none; }
+.brand { display:flex; align-items:center; gap:10px; font-family:'Orbitron',sans-serif; font-weight:700; font-size:1.3rem; }
+.badge { background:var(--blue); width:38px; height:38px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.9rem; }
+.links { display:flex; flex-wrap:wrap; gap:6px; }
+.links a { padding:8px 16px; border-radius:20px; }
+.links a:hover { background:rgba(255,255,255,0.15); }
+.links a.current { background:var(--blue); }
+
+.page { display:none; max-width:1000px; margin:0 auto; padding:56px 20px; }
 .box { background:var(--box); border:1px solid var(--line); border-left:4px solid var(--blue); border-radius:4px; padding:16px 18px; }
 .cols { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin:16px 0; }
 .cols p { margin:6px 0 0; color:var(--dim); }
@@ -48,35 +52,73 @@ pre { background:#0a0a0a; border:1px solid var(--line); padding:14px; overflow-x
 .top { display:flex; flex-wrap:wrap; gap:30px; align-items:flex-start; }
 .button { display:inline-block; background:var(--blue); color:#fff; padding:10px 18px; border-radius:4px; text-decoration:none; }
 footer { text-align:center; color:var(--dim); padding:24px; }
+
+.next { margin-top:50px; }
+.hero { display:flex; flex-wrap:wrap; gap:40px; align-items:center; }
+.hero-text { flex:1; min-width:280px; }
+.hero h1 { font-size:clamp(2.8rem,8vw,5rem); margin:0 0 8px; }
+.tagline { font-family:'Orbitron',sans-serif; color:#fff; font-size:1.2rem; margin:0 0 16px; }
+.hero img { width:240px; height:300px; object-fit:cover; border:2px solid var(--blue); border-radius:6px; cursor:pointer; }
+.button.outline { background:none; border:2px solid var(--blue); padding:8px 16px; }
+.buttons a { margin-right:10px; }
+.feature { display:flex; flex-wrap:wrap; gap:24px; align-items:center; }
+.feature img { width:340px; max-width:100%; height:220px; object-fit:cover; border:1px solid var(--line); border-radius:4px; cursor:pointer; }
+.feature div { flex:1; min-width:260px; }
+.gallery img, .photos img, .headshot { cursor:pointer; }
+#viewer { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.92); z-index:20; align-items:center; justify-content:center; cursor:pointer; }
+#viewer img { max-width:92%; max-height:92%; }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="name" href="#home">Alex DiFranco</a>
-  <a href="#about">About</a>
-  <a href="#project">Project</a>
-  <a href="#code">Code</a>
-  <a href="#photography">Photography</a>
-  <a href="#contact">Contact</a>
+  <a class="brand" href="#" onclick="showPage('home'); return false;" data-page="home"><span class="badge">AD</span>Alex DiFranco</a>
+  <div class="links">
+    <a href="#" onclick="showPage('about'); return false;" data-page="about">About</a>
+    <a href="#" onclick="showPage('project'); return false;" data-page="project">Project</a>
+    <a href="#" onclick="showPage('code'); return false;" data-page="code">Code</a>
+    <a href="#" onclick="showPage('photography'); return false;" data-page="photography">Photography</a>
+    <a href="#" onclick="showPage('contact'); return false;" data-page="contact">Contact</a>
+  </div>
 </nav>
 
-<section id="home">
-  <h1>Alex DiFranco</h1>
-  <p>Future mechanical engineer from Eastchester, NY. I like building things and measuring how they actually perform.</p>
-  <div class="box" style="max-width:380px">
+<section class="page" id="home">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Alex DiFranco</h1>
+      <p class="tagline">Future mechanical engineer</p>
+      <p>I'm a senior at Eastchester High School in New York. I like building things and measuring how they actually perform.</p>
+      <p class="buttons">
+        <a class="button" href="#" onclick="showPage('project'); return false;">See my project</a>
+        <a class="button outline" href="#" onclick="showPage('about'); return false;">About me</a>
+      </p>
+    </div>
+    <img src="photos/headshot.png" alt="Alex DiFranco" onclick="openPhoto(this)">
+  </div>
+
+  <div class="box" style="margin-top:40px">
     <p style="margin:0">Eastchester High School, NY, Class of 2027<br>
     Intended major: Mechanical Engineering<br>
     GPA: 96.9 / 100 (weighted)<br>
     SAT: 1420 superscore (770 Math, 650 Reading and Writing)</p>
   </div>
-  <p><a class="button" href="#project">See my RC dynamometer project</a></p>
+
+  <h3 style="margin-top:40px">Featured project</h3>
+  <div class="feature">
+    <img src="photos/project/v2build1.png" alt="RC dynamometer roller rig" onclick="openPhoto(this)">
+    <div>
+      <p><strong>RC dynamometer.</strong> I built a low-cost dynamometer with a magnet, a Hall sensor, and an Arduino to measure how fast my RC car really goes. It took three versions to get consistent results.</p>
+      <p><a class="button" href="#" onclick="showPage('project'); return false;">Read about it</a></p>
+    </div>
+  </div>
+
+  <p class="next"><a class="button" href="#" onclick="showPage('about'); return false;">Next: About</a></p>
 </section>
 
-<section id="about">
+<section class="page" id="about">
   <h2>About me</h2>
   <div class="top">
-    <img class="headshot" src="photos/headshot.png" alt="Alex DiFranco">
+    <img class="headshot" src="photos/headshot.png" alt="Alex DiFranco" onclick="openPhoto(this)">
     <div style="flex:1; min-width:260px">
       <p>I've always liked figuring out how stuff actually works. Not just reading about it, but taking it apart, measuring it, and seeing what actually makes it better instead of just guessing.</p>
       <p>Honestly my interest in engineering isn't tied to one specific thing. I just find tradeoffs interesting, like weight vs. strength, or efficiency vs. output, or cost vs. performance. They're not really abstract to me, I'm dealing with them pretty much every time I build something.</p>
@@ -118,9 +160,11 @@ footer { text-align:center; color:var(--dim); padding:24px; }
   <p><strong>This year:</strong> AP Physics C (Mechanics and Electricity &amp; Magnetism), AP Calculus AB, Robotics &amp; Foundations in Electrical Engineering, AP English Literature, AP Business with Personal Finance, AP Macroeconomics, AP Italian Language and Culture, WISE Internship</p>
   <p><strong>College courses:</strong> Precalculus at Iona University and Intermediate Italian at Westchester Community College (dual enrollment)</p>
   <p><strong>Academics:</strong> GPA 96.9 / 100 (weighted). SAT 1420 superscore (770 Math, 650 Reading and Writing).</p>
+
+  <p class="next"><a class="button" href="#" onclick="showPage('project'); return false;">Next: Project</a></p>
 </section>
 
-<section id="project">
+<section class="page" id="project">
   <h2>RC Dynamometer Project</h2>
   <p class="dim">Started as just a speed sensor, turned into an actual testing rig.</p>
   <div class="box">
@@ -131,12 +175,14 @@ footer { text-align:center; color:var(--dim); padding:24px; }
     <p style="margin:0"><strong>Results at a glance:</strong> Run-to-run variation in average speed dropped from about 20% in V2 to about 5% in V3. The roller's top speed was 18.62 mph at 6,360 RPM, in line with the 18 mph listed for the car.</p>
   </div>
 
-  <h3 style="margin-top:50px">V1: Learning and planning</h3>
-  <div class="gallery"><figure><a href="photos/project/v0build1.png"><img src="photos/project/v0build1.png" alt="Hall sensor breadboard test"></a><figcaption>Hall sensor breadboard test</figcaption></figure><figure><a href="photos/project/v0build2.png"><img src="photos/project/v0build2.png" alt="Early stand sketches"></a><figcaption>Early stand sketches</figcaption></figure><figure><a href="photos/project/v0build3.png"><img src="photos/project/v0build3.png" alt="Clip prototype attempt"></a><figcaption>Clip prototype attempt</figcaption></figure></div>
+  <p class="dim">Jump to <a href="#v1">V1</a>, <a href="#v2">V2</a>, or <a href="#v3">V3</a>.</p>
+
+  <h3 id="v1" style="margin-top:50px">V1: Learning and planning</h3>
+  <div class="gallery"><figure><img src="photos/project/v0build1.png" alt="Hall sensor breadboard test" onclick="openPhoto(this)"><figcaption>Hall sensor breadboard test</figcaption></figure><figure><img src="photos/project/v0build2.png" alt="Early stand sketches" onclick="openPhoto(this)"><figcaption>Early stand sketches</figcaption></figure><figure><img src="photos/project/v0build3.png" alt="Clip prototype attempt" onclick="openPhoto(this)"><figcaption>Clip prototype attempt</figcaption></figure></div>
   <p>V1 was the planning stage. There was no stand, no mount, and nothing measuring anything yet. I wired the Hall sensor up on a breadboard to see how it worked, and I found out that only one side of a magnet triggers it. I also sketched a few ideas for a stand and clip. The clip I designed ended up too tight to work, and a circular mounting point I tried on top wasn't strong enough and slid around too much.</p>
 
-  <h3 style="margin-top:50px">V2: Desk-clip stand</h3>
-  <div class="gallery"><figure><a href="photos/project/build1.png"><img src="photos/project/build1.png" alt="V2 full rig"></a><figcaption>V2 full rig</figcaption></figure><figure><a href="photos/project/build2.png"><img src="photos/project/build2.png" alt="Full rig, no car"></a><figcaption>Full rig, no car</figcaption></figure><figure><a href="photos/project/build3.png"><img src="photos/project/build3.png" alt="Magnet on wheel"></a><figcaption>Magnet on wheel</figcaption></figure><figure><a href="photos/project/build4.png"><img src="photos/project/build4.png" alt="Desk-clip stand"></a><figcaption>Desk-clip stand</figcaption></figure><figure><a href="photos/project/build5.png"><img src="photos/project/build5.png" alt="Circuit setup"></a><figcaption>Circuit setup</figcaption></figure></div>
+  <h3 id="v2" style="margin-top:50px">V2: Desk-clip stand</h3>
+  <div class="gallery"><figure><img src="photos/project/build1.png" alt="V2 full rig" onclick="openPhoto(this)"><figcaption>V2 full rig</figcaption></figure><figure><img src="photos/project/build2.png" alt="Full rig, no car" onclick="openPhoto(this)"><figcaption>Full rig, no car</figcaption></figure><figure><img src="photos/project/build3.png" alt="Magnet on wheel" onclick="openPhoto(this)"><figcaption>Magnet on wheel</figcaption></figure><figure><img src="photos/project/build4.png" alt="Desk-clip stand" onclick="openPhoto(this)"><figcaption>Desk-clip stand</figcaption></figure><figure><img src="photos/project/build5.png" alt="Circuit setup" onclick="openPhoto(this)"><figcaption>Circuit setup</figcaption></figure></div>
   <h4>What I built</h4>
   <ul>
     <li><strong>Desk-clip stand:</strong> Just a stand that clips into my desk so the rig stays put while the car's running. It's not perfect since the desk itself flexes a little, but it's good enough to get a real reading.</li>
@@ -162,8 +208,8 @@ footer { text-align:center; color:var(--dim); padding:24px; }
     <li><strong>Prove the concept before adding complexity.</strong> Could've jumped straight to rollers and logging and graphs. Building the simplest possible version first confirmed the core idea works.</li>
   </ul>
 
-  <h3 style="margin-top:50px">V3: Roller system (current build)</h3>
-  <div class="gallery"><figure><a href="photos/project/v2build1.png"><img src="photos/project/v2build1.png" alt="Roller rig, full build"></a><figcaption>Roller rig, full build</figcaption></figure><figure><a href="photos/project/v2build2.png"><img src="photos/project/v2build2.png" alt="Roller rig, no car"></a><figcaption>Roller rig, no car</figcaption></figure><figure><a href="photos/project/v2build3.png"><img src="photos/project/v2build3.png" alt="Sensor mount with magnets"></a><figcaption>Sensor mount with magnets</figcaption></figure><figure><a href="photos/project/v2build4.png"><img src="photos/project/v2build4.png" alt="Custom roller on bearings"></a><figcaption>Custom roller on bearings</figcaption></figure><figure><a href="photos/project/v2build5.png"><img src="photos/project/v2build5.png" alt="Breadboard wire extension"></a><figcaption>Breadboard wire extension</figcaption></figure></div>
+  <h3 id="v3" style="margin-top:50px">V3: Roller system (current build)</h3>
+  <div class="gallery"><figure><img src="photos/project/v2build1.png" alt="Roller rig, full build" onclick="openPhoto(this)"><figcaption>Roller rig, full build</figcaption></figure><figure><img src="photos/project/v2build2.png" alt="Roller rig, no car" onclick="openPhoto(this)"><figcaption>Roller rig, no car</figcaption></figure><figure><img src="photos/project/v2build3.png" alt="Sensor mount with magnets" onclick="openPhoto(this)"><figcaption>Sensor mount with magnets</figcaption></figure><figure><img src="photos/project/v2build4.png" alt="Custom roller on bearings" onclick="openPhoto(this)"><figcaption>Custom roller on bearings</figcaption></figure><figure><img src="photos/project/v2build5.png" alt="Breadboard wire extension" onclick="openPhoto(this)"><figcaption>Breadboard wire extension</figcaption></figure></div>
   <h4>What I built</h4>
   <ul>
     <li><strong>Custom-built roller:</strong> Built this roller myself, it just happens to look like a paint roller. Runs on ball bearings, mounted with hot glue. Went through three different stand designs before one actually held still under load.</li>
@@ -188,9 +234,11 @@ footer { text-align:center; color:var(--dim); padding:24px; }
     <li><strong>Let the sensor float.</strong> Holding the sensor board by hand was causing its own vibration. Mounting it on a magnetic press-fit bracket got my hands out of it completely, the rig basically runs itself now.</li>
     <li><strong>Staples as conductive extensions.</strong> Didn't have the right length wire on hand, so I plugged spare staples right into the breadboard as conductive material to extend things up and clear of the roller. It's a cheap fix, but it works well.</li>
   </ul>
+
+  <p class="next"><a class="button" href="#" onclick="showPage('code'); return false;">Next: Code</a></p>
 </section>
 
-<section id="code">
+<section class="page" id="code">
   <h2>Dyno code</h2>
   <p class="dim">The actual Arduino code behind each version. Click one to open it.</p>
 
@@ -620,24 +668,63 @@ void countPulse() {
   pulseCount++;
 }</pre>
   </details>
+
+  <p class="next"><a class="button" href="#" onclick="showPage('photography'); return false;">Next: Photography</a></p>
 </section>
 
-<section id="photography">
+<section class="page" id="photography">
   <h2>Photography</h2>
   <p>Photography is kind of how I look at things when I'm not building something. I'm still pretty analytical about it honestly, I like geometry, mechanical stuff, and city textures. Click an album to open it, and click a photo to see it full size.</p>
-  <details><summary>Nature (50 photos)</summary><div class="photos"><a href="photos/nature/nature1.jpg"><img src="photos/nature/nature1.jpg" loading="lazy" alt="Nature photo 1"></a><a href="photos/nature/nature2.jpg"><img src="photos/nature/nature2.jpg" loading="lazy" alt="Nature photo 2"></a><a href="photos/nature/nature3.jpg"><img src="photos/nature/nature3.jpg" loading="lazy" alt="Nature photo 3"></a><a href="photos/nature/nature4.jpg"><img src="photos/nature/nature4.jpg" loading="lazy" alt="Nature photo 4"></a><a href="photos/nature/nature5.jpg"><img src="photos/nature/nature5.jpg" loading="lazy" alt="Nature photo 5"></a><a href="photos/nature/nature6.jpg"><img src="photos/nature/nature6.jpg" loading="lazy" alt="Nature photo 6"></a><a href="photos/nature/nature7.jpg"><img src="photos/nature/nature7.jpg" loading="lazy" alt="Nature photo 7"></a><a href="photos/nature/nature8.jpg"><img src="photos/nature/nature8.jpg" loading="lazy" alt="Nature photo 8"></a><a href="photos/nature/nature9.jpg"><img src="photos/nature/nature9.jpg" loading="lazy" alt="Nature photo 9"></a><a href="photos/nature/nature10.jpg"><img src="photos/nature/nature10.jpg" loading="lazy" alt="Nature photo 10"></a><a href="photos/nature/nature11.jpg"><img src="photos/nature/nature11.jpg" loading="lazy" alt="Nature photo 11"></a><a href="photos/nature/nature12.jpg"><img src="photos/nature/nature12.jpg" loading="lazy" alt="Nature photo 12"></a><a href="photos/nature/nature13.jpg"><img src="photos/nature/nature13.jpg" loading="lazy" alt="Nature photo 13"></a><a href="photos/nature/nature14.jpg"><img src="photos/nature/nature14.jpg" loading="lazy" alt="Nature photo 14"></a><a href="photos/nature/nature15.jpg"><img src="photos/nature/nature15.jpg" loading="lazy" alt="Nature photo 15"></a><a href="photos/nature/nature16.jpg"><img src="photos/nature/nature16.jpg" loading="lazy" alt="Nature photo 16"></a><a href="photos/nature/nature17.jpg"><img src="photos/nature/nature17.jpg" loading="lazy" alt="Nature photo 17"></a><a href="photos/nature/nature18.jpg"><img src="photos/nature/nature18.jpg" loading="lazy" alt="Nature photo 18"></a><a href="photos/nature/nature19.jpg"><img src="photos/nature/nature19.jpg" loading="lazy" alt="Nature photo 19"></a><a href="photos/nature/nature20.jpg"><img src="photos/nature/nature20.jpg" loading="lazy" alt="Nature photo 20"></a><a href="photos/nature/nature21.jpg"><img src="photos/nature/nature21.jpg" loading="lazy" alt="Nature photo 21"></a><a href="photos/nature/nature22.jpg"><img src="photos/nature/nature22.jpg" loading="lazy" alt="Nature photo 22"></a><a href="photos/nature/nature23.jpg"><img src="photos/nature/nature23.jpg" loading="lazy" alt="Nature photo 23"></a><a href="photos/nature/nature24.jpg"><img src="photos/nature/nature24.jpg" loading="lazy" alt="Nature photo 24"></a><a href="photos/nature/nature25.jpg"><img src="photos/nature/nature25.jpg" loading="lazy" alt="Nature photo 25"></a><a href="photos/nature/nature26.jpg"><img src="photos/nature/nature26.jpg" loading="lazy" alt="Nature photo 26"></a><a href="photos/nature/nature27.jpg"><img src="photos/nature/nature27.jpg" loading="lazy" alt="Nature photo 27"></a><a href="photos/nature/nature28.jpg"><img src="photos/nature/nature28.jpg" loading="lazy" alt="Nature photo 28"></a><a href="photos/nature/nature29.jpg"><img src="photos/nature/nature29.jpg" loading="lazy" alt="Nature photo 29"></a><a href="photos/nature/nature30.jpg"><img src="photos/nature/nature30.jpg" loading="lazy" alt="Nature photo 30"></a><a href="photos/nature/nature31.jpg"><img src="photos/nature/nature31.jpg" loading="lazy" alt="Nature photo 31"></a><a href="photos/nature/nature32.jpg"><img src="photos/nature/nature32.jpg" loading="lazy" alt="Nature photo 32"></a><a href="photos/nature/nature33.jpg"><img src="photos/nature/nature33.jpg" loading="lazy" alt="Nature photo 33"></a><a href="photos/nature/nature34.jpg"><img src="photos/nature/nature34.jpg" loading="lazy" alt="Nature photo 34"></a><a href="photos/nature/nature35.jpg"><img src="photos/nature/nature35.jpg" loading="lazy" alt="Nature photo 35"></a><a href="photos/nature/nature36.jpg"><img src="photos/nature/nature36.jpg" loading="lazy" alt="Nature photo 36"></a><a href="photos/nature/nature37.jpg"><img src="photos/nature/nature37.jpg" loading="lazy" alt="Nature photo 37"></a><a href="photos/nature/nature38.jpg"><img src="photos/nature/nature38.jpg" loading="lazy" alt="Nature photo 38"></a><a href="photos/nature/nature39.jpg"><img src="photos/nature/nature39.jpg" loading="lazy" alt="Nature photo 39"></a><a href="photos/nature/nature40.jpg"><img src="photos/nature/nature40.jpg" loading="lazy" alt="Nature photo 40"></a><a href="photos/nature/nature41.jpg"><img src="photos/nature/nature41.jpg" loading="lazy" alt="Nature photo 41"></a><a href="photos/nature/nature42.jpg"><img src="photos/nature/nature42.jpg" loading="lazy" alt="Nature photo 42"></a><a href="photos/nature/nature43.jpg"><img src="photos/nature/nature43.jpg" loading="lazy" alt="Nature photo 43"></a><a href="photos/nature/nature44.jpg"><img src="photos/nature/nature44.jpg" loading="lazy" alt="Nature photo 44"></a><a href="photos/nature/nature45.jpg"><img src="photos/nature/nature45.jpg" loading="lazy" alt="Nature photo 45"></a><a href="photos/nature/nature46.jpg"><img src="photos/nature/nature46.jpg" loading="lazy" alt="Nature photo 46"></a><a href="photos/nature/nature47.jpg"><img src="photos/nature/nature47.jpg" loading="lazy" alt="Nature photo 47"></a><a href="photos/nature/nature48.jpg"><img src="photos/nature/nature48.jpg" loading="lazy" alt="Nature photo 48"></a><a href="photos/nature/nature49.jpg"><img src="photos/nature/nature49.jpg" loading="lazy" alt="Nature photo 49"></a><a href="photos/nature/nature50.jpg"><img src="photos/nature/nature50.jpg" loading="lazy" alt="Nature photo 50"></a></div></details><details><summary>Cars (50 photos)</summary><div class="photos"><a href="photos/cars/car1.jpg"><img src="photos/cars/car1.jpg" loading="lazy" alt="Cars photo 1"></a><a href="photos/cars/car2.jpg"><img src="photos/cars/car2.jpg" loading="lazy" alt="Cars photo 2"></a><a href="photos/cars/car3.jpg"><img src="photos/cars/car3.jpg" loading="lazy" alt="Cars photo 3"></a><a href="photos/cars/car4.jpg"><img src="photos/cars/car4.jpg" loading="lazy" alt="Cars photo 4"></a><a href="photos/cars/car5.jpg"><img src="photos/cars/car5.jpg" loading="lazy" alt="Cars photo 5"></a><a href="photos/cars/car6.jpg"><img src="photos/cars/car6.jpg" loading="lazy" alt="Cars photo 6"></a><a href="photos/cars/car7.jpg"><img src="photos/cars/car7.jpg" loading="lazy" alt="Cars photo 7"></a><a href="photos/cars/car8.jpg"><img src="photos/cars/car8.jpg" loading="lazy" alt="Cars photo 8"></a><a href="photos/cars/car9.jpg"><img src="photos/cars/car9.jpg" loading="lazy" alt="Cars photo 9"></a><a href="photos/cars/car10.jpg"><img src="photos/cars/car10.jpg" loading="lazy" alt="Cars photo 10"></a><a href="photos/cars/car11.jpg"><img src="photos/cars/car11.jpg" loading="lazy" alt="Cars photo 11"></a><a href="photos/cars/car12.jpg"><img src="photos/cars/car12.jpg" loading="lazy" alt="Cars photo 12"></a><a href="photos/cars/car13.jpg"><img src="photos/cars/car13.jpg" loading="lazy" alt="Cars photo 13"></a><a href="photos/cars/car14.jpg"><img src="photos/cars/car14.jpg" loading="lazy" alt="Cars photo 14"></a><a href="photos/cars/car15.jpg"><img src="photos/cars/car15.jpg" loading="lazy" alt="Cars photo 15"></a><a href="photos/cars/car16.jpg"><img src="photos/cars/car16.jpg" loading="lazy" alt="Cars photo 16"></a><a href="photos/cars/car17.jpg"><img src="photos/cars/car17.jpg" loading="lazy" alt="Cars photo 17"></a><a href="photos/cars/car18.jpg"><img src="photos/cars/car18.jpg" loading="lazy" alt="Cars photo 18"></a><a href="photos/cars/car19.jpg"><img src="photos/cars/car19.jpg" loading="lazy" alt="Cars photo 19"></a><a href="photos/cars/car20.jpg"><img src="photos/cars/car20.jpg" loading="lazy" alt="Cars photo 20"></a><a href="photos/cars/car21.jpg"><img src="photos/cars/car21.jpg" loading="lazy" alt="Cars photo 21"></a><a href="photos/cars/car22.jpg"><img src="photos/cars/car22.jpg" loading="lazy" alt="Cars photo 22"></a><a href="photos/cars/car23.jpg"><img src="photos/cars/car23.jpg" loading="lazy" alt="Cars photo 23"></a><a href="photos/cars/car24.jpg"><img src="photos/cars/car24.jpg" loading="lazy" alt="Cars photo 24"></a><a href="photos/cars/car25.jpg"><img src="photos/cars/car25.jpg" loading="lazy" alt="Cars photo 25"></a><a href="photos/cars/car26.jpg"><img src="photos/cars/car26.jpg" loading="lazy" alt="Cars photo 26"></a><a href="photos/cars/car27.jpg"><img src="photos/cars/car27.jpg" loading="lazy" alt="Cars photo 27"></a><a href="photos/cars/car28.jpg"><img src="photos/cars/car28.jpg" loading="lazy" alt="Cars photo 28"></a><a href="photos/cars/car29.jpg"><img src="photos/cars/car29.jpg" loading="lazy" alt="Cars photo 29"></a><a href="photos/cars/car30.jpg"><img src="photos/cars/car30.jpg" loading="lazy" alt="Cars photo 30"></a><a href="photos/cars/car31.jpg"><img src="photos/cars/car31.jpg" loading="lazy" alt="Cars photo 31"></a><a href="photos/cars/car32.jpg"><img src="photos/cars/car32.jpg" loading="lazy" alt="Cars photo 32"></a><a href="photos/cars/car33.jpg"><img src="photos/cars/car33.jpg" loading="lazy" alt="Cars photo 33"></a><a href="photos/cars/car34.jpg"><img src="photos/cars/car34.jpg" loading="lazy" alt="Cars photo 34"></a><a href="photos/cars/car35.jpg"><img src="photos/cars/car35.jpg" loading="lazy" alt="Cars photo 35"></a><a href="photos/cars/car36.jpg"><img src="photos/cars/car36.jpg" loading="lazy" alt="Cars photo 36"></a><a href="photos/cars/car37.jpg"><img src="photos/cars/car37.jpg" loading="lazy" alt="Cars photo 37"></a><a href="photos/cars/car38.jpg"><img src="photos/cars/car38.jpg" loading="lazy" alt="Cars photo 38"></a><a href="photos/cars/car39.jpg"><img src="photos/cars/car39.jpg" loading="lazy" alt="Cars photo 39"></a><a href="photos/cars/car40.jpg"><img src="photos/cars/car40.jpg" loading="lazy" alt="Cars photo 40"></a><a href="photos/cars/car41.jpg"><img src="photos/cars/car41.jpg" loading="lazy" alt="Cars photo 41"></a><a href="photos/cars/car42.jpg"><img src="photos/cars/car42.jpg" loading="lazy" alt="Cars photo 42"></a><a href="photos/cars/car43.jpg"><img src="photos/cars/car43.jpg" loading="lazy" alt="Cars photo 43"></a><a href="photos/cars/car44.jpg"><img src="photos/cars/car44.jpg" loading="lazy" alt="Cars photo 44"></a><a href="photos/cars/car45.jpg"><img src="photos/cars/car45.jpg" loading="lazy" alt="Cars photo 45"></a><a href="photos/cars/car46.jpg"><img src="photos/cars/car46.jpg" loading="lazy" alt="Cars photo 46"></a><a href="photos/cars/car47.jpg"><img src="photos/cars/car47.jpg" loading="lazy" alt="Cars photo 47"></a><a href="photos/cars/car48.jpg"><img src="photos/cars/car48.jpg" loading="lazy" alt="Cars photo 48"></a><a href="photos/cars/car49.jpg"><img src="photos/cars/car49.jpg" loading="lazy" alt="Cars photo 49"></a><a href="photos/cars/car50.jpg"><img src="photos/cars/car50.jpg" loading="lazy" alt="Cars photo 50"></a></div></details><details><summary>Cities (30 photos)</summary><div class="photos"><a href="photos/city/city1.jpg"><img src="photos/city/city1.jpg" loading="lazy" alt="Cities photo 1"></a><a href="photos/city/city2.jpg"><img src="photos/city/city2.jpg" loading="lazy" alt="Cities photo 2"></a><a href="photos/city/city3.jpg"><img src="photos/city/city3.jpg" loading="lazy" alt="Cities photo 3"></a><a href="photos/city/city4.jpg"><img src="photos/city/city4.jpg" loading="lazy" alt="Cities photo 4"></a><a href="photos/city/city5.jpg"><img src="photos/city/city5.jpg" loading="lazy" alt="Cities photo 5"></a><a href="photos/city/city6.jpg"><img src="photos/city/city6.jpg" loading="lazy" alt="Cities photo 6"></a><a href="photos/city/city7.jpg"><img src="photos/city/city7.jpg" loading="lazy" alt="Cities photo 7"></a><a href="photos/city/city8.jpg"><img src="photos/city/city8.jpg" loading="lazy" alt="Cities photo 8"></a><a href="photos/city/city9.jpg"><img src="photos/city/city9.jpg" loading="lazy" alt="Cities photo 9"></a><a href="photos/city/city10.jpg"><img src="photos/city/city10.jpg" loading="lazy" alt="Cities photo 10"></a><a href="photos/city/city11.jpg"><img src="photos/city/city11.jpg" loading="lazy" alt="Cities photo 11"></a><a href="photos/city/city12.jpg"><img src="photos/city/city12.jpg" loading="lazy" alt="Cities photo 12"></a><a href="photos/city/city13.jpg"><img src="photos/city/city13.jpg" loading="lazy" alt="Cities photo 13"></a><a href="photos/city/city14.jpg"><img src="photos/city/city14.jpg" loading="lazy" alt="Cities photo 14"></a><a href="photos/city/city15.jpg"><img src="photos/city/city15.jpg" loading="lazy" alt="Cities photo 15"></a><a href="photos/city/city16.jpg"><img src="photos/city/city16.jpg" loading="lazy" alt="Cities photo 16"></a><a href="photos/city/city17.jpg"><img src="photos/city/city17.jpg" loading="lazy" alt="Cities photo 17"></a><a href="photos/city/city18.jpg"><img src="photos/city/city18.jpg" loading="lazy" alt="Cities photo 18"></a><a href="photos/city/city19.jpg"><img src="photos/city/city19.jpg" loading="lazy" alt="Cities photo 19"></a><a href="photos/city/city20.jpg"><img src="photos/city/city20.jpg" loading="lazy" alt="Cities photo 20"></a><a href="photos/city/city21.jpg"><img src="photos/city/city21.jpg" loading="lazy" alt="Cities photo 21"></a><a href="photos/city/city22.jpg"><img src="photos/city/city22.jpg" loading="lazy" alt="Cities photo 22"></a><a href="photos/city/city23.jpg"><img src="photos/city/city23.jpg" loading="lazy" alt="Cities photo 23"></a><a href="photos/city/city24.jpg"><img src="photos/city/city24.jpg" loading="lazy" alt="Cities photo 24"></a><a href="photos/city/city25.jpg"><img src="photos/city/city25.jpg" loading="lazy" alt="Cities photo 25"></a><a href="photos/city/city26.jpg"><img src="photos/city/city26.jpg" loading="lazy" alt="Cities photo 26"></a><a href="photos/city/city27.jpg"><img src="photos/city/city27.jpg" loading="lazy" alt="Cities photo 27"></a><a href="photos/city/city28.jpg"><img src="photos/city/city28.jpg" loading="lazy" alt="Cities photo 28"></a><a href="photos/city/city29.jpg"><img src="photos/city/city29.jpg" loading="lazy" alt="Cities photo 29"></a><a href="photos/city/city30.jpg"><img src="photos/city/city30.jpg" loading="lazy" alt="Cities photo 30"></a></div></details>
+  <details><summary>Nature (50 photos)</summary><div class="photos"><img src="photos/nature/nature1.jpg" loading="lazy" alt="Nature photo 1" onclick="openPhoto(this)"><img src="photos/nature/nature2.jpg" loading="lazy" alt="Nature photo 2" onclick="openPhoto(this)"><img src="photos/nature/nature3.jpg" loading="lazy" alt="Nature photo 3" onclick="openPhoto(this)"><img src="photos/nature/nature4.jpg" loading="lazy" alt="Nature photo 4" onclick="openPhoto(this)"><img src="photos/nature/nature5.jpg" loading="lazy" alt="Nature photo 5" onclick="openPhoto(this)"><img src="photos/nature/nature6.jpg" loading="lazy" alt="Nature photo 6" onclick="openPhoto(this)"><img src="photos/nature/nature7.jpg" loading="lazy" alt="Nature photo 7" onclick="openPhoto(this)"><img src="photos/nature/nature8.jpg" loading="lazy" alt="Nature photo 8" onclick="openPhoto(this)"><img src="photos/nature/nature9.jpg" loading="lazy" alt="Nature photo 9" onclick="openPhoto(this)"><img src="photos/nature/nature10.jpg" loading="lazy" alt="Nature photo 10" onclick="openPhoto(this)"><img src="photos/nature/nature11.jpg" loading="lazy" alt="Nature photo 11" onclick="openPhoto(this)"><img src="photos/nature/nature12.jpg" loading="lazy" alt="Nature photo 12" onclick="openPhoto(this)"><img src="photos/nature/nature13.jpg" loading="lazy" alt="Nature photo 13" onclick="openPhoto(this)"><img src="photos/nature/nature14.jpg" loading="lazy" alt="Nature photo 14" onclick="openPhoto(this)"><img src="photos/nature/nature15.jpg" loading="lazy" alt="Nature photo 15" onclick="openPhoto(this)"><img src="photos/nature/nature16.jpg" loading="lazy" alt="Nature photo 16" onclick="openPhoto(this)"><img src="photos/nature/nature17.jpg" loading="lazy" alt="Nature photo 17" onclick="openPhoto(this)"><img src="photos/nature/nature18.jpg" loading="lazy" alt="Nature photo 18" onclick="openPhoto(this)"><img src="photos/nature/nature19.jpg" loading="lazy" alt="Nature photo 19" onclick="openPhoto(this)"><img src="photos/nature/nature20.jpg" loading="lazy" alt="Nature photo 20" onclick="openPhoto(this)"><img src="photos/nature/nature21.jpg" loading="lazy" alt="Nature photo 21" onclick="openPhoto(this)"><img src="photos/nature/nature22.jpg" loading="lazy" alt="Nature photo 22" onclick="openPhoto(this)"><img src="photos/nature/nature23.jpg" loading="lazy" alt="Nature photo 23" onclick="openPhoto(this)"><img src="photos/nature/nature24.jpg" loading="lazy" alt="Nature photo 24" onclick="openPhoto(this)"><img src="photos/nature/nature25.jpg" loading="lazy" alt="Nature photo 25" onclick="openPhoto(this)"><img src="photos/nature/nature26.jpg" loading="lazy" alt="Nature photo 26" onclick="openPhoto(this)"><img src="photos/nature/nature27.jpg" loading="lazy" alt="Nature photo 27" onclick="openPhoto(this)"><img src="photos/nature/nature28.jpg" loading="lazy" alt="Nature photo 28" onclick="openPhoto(this)"><img src="photos/nature/nature29.jpg" loading="lazy" alt="Nature photo 29" onclick="openPhoto(this)"><img src="photos/nature/nature30.jpg" loading="lazy" alt="Nature photo 30" onclick="openPhoto(this)"><img src="photos/nature/nature31.jpg" loading="lazy" alt="Nature photo 31" onclick="openPhoto(this)"><img src="photos/nature/nature32.jpg" loading="lazy" alt="Nature photo 32" onclick="openPhoto(this)"><img src="photos/nature/nature33.jpg" loading="lazy" alt="Nature photo 33" onclick="openPhoto(this)"><img src="photos/nature/nature34.jpg" loading="lazy" alt="Nature photo 34" onclick="openPhoto(this)"><img src="photos/nature/nature35.jpg" loading="lazy" alt="Nature photo 35" onclick="openPhoto(this)"><img src="photos/nature/nature36.jpg" loading="lazy" alt="Nature photo 36" onclick="openPhoto(this)"><img src="photos/nature/nature37.jpg" loading="lazy" alt="Nature photo 37" onclick="openPhoto(this)"><img src="photos/nature/nature38.jpg" loading="lazy" alt="Nature photo 38" onclick="openPhoto(this)"><img src="photos/nature/nature39.jpg" loading="lazy" alt="Nature photo 39" onclick="openPhoto(this)"><img src="photos/nature/nature40.jpg" loading="lazy" alt="Nature photo 40" onclick="openPhoto(this)"><img src="photos/nature/nature41.jpg" loading="lazy" alt="Nature photo 41" onclick="openPhoto(this)"><img src="photos/nature/nature42.jpg" loading="lazy" alt="Nature photo 42" onclick="openPhoto(this)"><img src="photos/nature/nature43.jpg" loading="lazy" alt="Nature photo 43" onclick="openPhoto(this)"><img src="photos/nature/nature44.jpg" loading="lazy" alt="Nature photo 44" onclick="openPhoto(this)"><img src="photos/nature/nature45.jpg" loading="lazy" alt="Nature photo 45" onclick="openPhoto(this)"><img src="photos/nature/nature46.jpg" loading="lazy" alt="Nature photo 46" onclick="openPhoto(this)"><img src="photos/nature/nature47.jpg" loading="lazy" alt="Nature photo 47" onclick="openPhoto(this)"><img src="photos/nature/nature48.jpg" loading="lazy" alt="Nature photo 48" onclick="openPhoto(this)"><img src="photos/nature/nature49.jpg" loading="lazy" alt="Nature photo 49" onclick="openPhoto(this)"><img src="photos/nature/nature50.jpg" loading="lazy" alt="Nature photo 50" onclick="openPhoto(this)"></div></details><details><summary>Cars (50 photos)</summary><div class="photos"><img src="photos/cars/car1.jpg" loading="lazy" alt="Cars photo 1" onclick="openPhoto(this)"><img src="photos/cars/car2.jpg" loading="lazy" alt="Cars photo 2" onclick="openPhoto(this)"><img src="photos/cars/car3.jpg" loading="lazy" alt="Cars photo 3" onclick="openPhoto(this)"><img src="photos/cars/car4.jpg" loading="lazy" alt="Cars photo 4" onclick="openPhoto(this)"><img src="photos/cars/car5.jpg" loading="lazy" alt="Cars photo 5" onclick="openPhoto(this)"><img src="photos/cars/car6.jpg" loading="lazy" alt="Cars photo 6" onclick="openPhoto(this)"><img src="photos/cars/car7.jpg" loading="lazy" alt="Cars photo 7" onclick="openPhoto(this)"><img src="photos/cars/car8.jpg" loading="lazy" alt="Cars photo 8" onclick="openPhoto(this)"><img src="photos/cars/car9.jpg" loading="lazy" alt="Cars photo 9" onclick="openPhoto(this)"><img src="photos/cars/car10.jpg" loading="lazy" alt="Cars photo 10" onclick="openPhoto(this)"><img src="photos/cars/car11.jpg" loading="lazy" alt="Cars photo 11" onclick="openPhoto(this)"><img src="photos/cars/car12.jpg" loading="lazy" alt="Cars photo 12" onclick="openPhoto(this)"><img src="photos/cars/car13.jpg" loading="lazy" alt="Cars photo 13" onclick="openPhoto(this)"><img src="photos/cars/car14.jpg" loading="lazy" alt="Cars photo 14" onclick="openPhoto(this)"><img src="photos/cars/car15.jpg" loading="lazy" alt="Cars photo 15" onclick="openPhoto(this)"><img src="photos/cars/car16.jpg" loading="lazy" alt="Cars photo 16" onclick="openPhoto(this)"><img src="photos/cars/car17.jpg" loading="lazy" alt="Cars photo 17" onclick="openPhoto(this)"><img src="photos/cars/car18.jpg" loading="lazy" alt="Cars photo 18" onclick="openPhoto(this)"><img src="photos/cars/car19.jpg" loading="lazy" alt="Cars photo 19" onclick="openPhoto(this)"><img src="photos/cars/car20.jpg" loading="lazy" alt="Cars photo 20" onclick="openPhoto(this)"><img src="photos/cars/car21.jpg" loading="lazy" alt="Cars photo 21" onclick="openPhoto(this)"><img src="photos/cars/car22.jpg" loading="lazy" alt="Cars photo 22" onclick="openPhoto(this)"><img src="photos/cars/car23.jpg" loading="lazy" alt="Cars photo 23" onclick="openPhoto(this)"><img src="photos/cars/car24.jpg" loading="lazy" alt="Cars photo 24" onclick="openPhoto(this)"><img src="photos/cars/car25.jpg" loading="lazy" alt="Cars photo 25" onclick="openPhoto(this)"><img src="photos/cars/car26.jpg" loading="lazy" alt="Cars photo 26" onclick="openPhoto(this)"><img src="photos/cars/car27.jpg" loading="lazy" alt="Cars photo 27" onclick="openPhoto(this)"><img src="photos/cars/car28.jpg" loading="lazy" alt="Cars photo 28" onclick="openPhoto(this)"><img src="photos/cars/car29.jpg" loading="lazy" alt="Cars photo 29" onclick="openPhoto(this)"><img src="photos/cars/car30.jpg" loading="lazy" alt="Cars photo 30" onclick="openPhoto(this)"><img src="photos/cars/car31.jpg" loading="lazy" alt="Cars photo 31" onclick="openPhoto(this)"><img src="photos/cars/car32.jpg" loading="lazy" alt="Cars photo 32" onclick="openPhoto(this)"><img src="photos/cars/car33.jpg" loading="lazy" alt="Cars photo 33" onclick="openPhoto(this)"><img src="photos/cars/car34.jpg" loading="lazy" alt="Cars photo 34" onclick="openPhoto(this)"><img src="photos/cars/car35.jpg" loading="lazy" alt="Cars photo 35" onclick="openPhoto(this)"><img src="photos/cars/car36.jpg" loading="lazy" alt="Cars photo 36" onclick="openPhoto(this)"><img src="photos/cars/car37.jpg" loading="lazy" alt="Cars photo 37" onclick="openPhoto(this)"><img src="photos/cars/car38.jpg" loading="lazy" alt="Cars photo 38" onclick="openPhoto(this)"><img src="photos/cars/car39.jpg" loading="lazy" alt="Cars photo 39" onclick="openPhoto(this)"><img src="photos/cars/car40.jpg" loading="lazy" alt="Cars photo 40" onclick="openPhoto(this)"><img src="photos/cars/car41.jpg" loading="lazy" alt="Cars photo 41" onclick="openPhoto(this)"><img src="photos/cars/car42.jpg" loading="lazy" alt="Cars photo 42" onclick="openPhoto(this)"><img src="photos/cars/car43.jpg" loading="lazy" alt="Cars photo 43" onclick="openPhoto(this)"><img src="photos/cars/car44.jpg" loading="lazy" alt="Cars photo 44" onclick="openPhoto(this)"><img src="photos/cars/car45.jpg" loading="lazy" alt="Cars photo 45" onclick="openPhoto(this)"><img src="photos/cars/car46.jpg" loading="lazy" alt="Cars photo 46" onclick="openPhoto(this)"><img src="photos/cars/car47.jpg" loading="lazy" alt="Cars photo 47" onclick="openPhoto(this)"><img src="photos/cars/car48.jpg" loading="lazy" alt="Cars photo 48" onclick="openPhoto(this)"><img src="photos/cars/car49.jpg" loading="lazy" alt="Cars photo 49" onclick="openPhoto(this)"><img src="photos/cars/car50.jpg" loading="lazy" alt="Cars photo 50" onclick="openPhoto(this)"></div></details><details><summary>Cities (30 photos)</summary><div class="photos"><img src="photos/city/city1.jpg" loading="lazy" alt="Cities photo 1" onclick="openPhoto(this)"><img src="photos/city/city2.jpg" loading="lazy" alt="Cities photo 2" onclick="openPhoto(this)"><img src="photos/city/city3.jpg" loading="lazy" alt="Cities photo 3" onclick="openPhoto(this)"><img src="photos/city/city4.jpg" loading="lazy" alt="Cities photo 4" onclick="openPhoto(this)"><img src="photos/city/city5.jpg" loading="lazy" alt="Cities photo 5" onclick="openPhoto(this)"><img src="photos/city/city6.jpg" loading="lazy" alt="Cities photo 6" onclick="openPhoto(this)"><img src="photos/city/city7.jpg" loading="lazy" alt="Cities photo 7" onclick="openPhoto(this)"><img src="photos/city/city8.jpg" loading="lazy" alt="Cities photo 8" onclick="openPhoto(this)"><img src="photos/city/city9.jpg" loading="lazy" alt="Cities photo 9" onclick="openPhoto(this)"><img src="photos/city/city10.jpg" loading="lazy" alt="Cities photo 10" onclick="openPhoto(this)"><img src="photos/city/city11.jpg" loading="lazy" alt="Cities photo 11" onclick="openPhoto(this)"><img src="photos/city/city12.jpg" loading="lazy" alt="Cities photo 12" onclick="openPhoto(this)"><img src="photos/city/city13.jpg" loading="lazy" alt="Cities photo 13" onclick="openPhoto(this)"><img src="photos/city/city14.jpg" loading="lazy" alt="Cities photo 14" onclick="openPhoto(this)"><img src="photos/city/city15.jpg" loading="lazy" alt="Cities photo 15" onclick="openPhoto(this)"><img src="photos/city/city16.jpg" loading="lazy" alt="Cities photo 16" onclick="openPhoto(this)"><img src="photos/city/city17.jpg" loading="lazy" alt="Cities photo 17" onclick="openPhoto(this)"><img src="photos/city/city18.jpg" loading="lazy" alt="Cities photo 18" onclick="openPhoto(this)"><img src="photos/city/city19.jpg" loading="lazy" alt="Cities photo 19" onclick="openPhoto(this)"><img src="photos/city/city20.jpg" loading="lazy" alt="Cities photo 20" onclick="openPhoto(this)"><img src="photos/city/city21.jpg" loading="lazy" alt="Cities photo 21" onclick="openPhoto(this)"><img src="photos/city/city22.jpg" loading="lazy" alt="Cities photo 22" onclick="openPhoto(this)"><img src="photos/city/city23.jpg" loading="lazy" alt="Cities photo 23" onclick="openPhoto(this)"><img src="photos/city/city24.jpg" loading="lazy" alt="Cities photo 24" onclick="openPhoto(this)"><img src="photos/city/city25.jpg" loading="lazy" alt="Cities photo 25" onclick="openPhoto(this)"><img src="photos/city/city26.jpg" loading="lazy" alt="Cities photo 26" onclick="openPhoto(this)"><img src="photos/city/city27.jpg" loading="lazy" alt="Cities photo 27" onclick="openPhoto(this)"><img src="photos/city/city28.jpg" loading="lazy" alt="Cities photo 28" onclick="openPhoto(this)"><img src="photos/city/city29.jpg" loading="lazy" alt="Cities photo 29" onclick="openPhoto(this)"><img src="photos/city/city30.jpg" loading="lazy" alt="Cities photo 30" onclick="openPhoto(this)"></div></details>
+
+  <p class="next"><a class="button" href="#" onclick="showPage('contact'); return false;">Next: Contact</a></p>
 </section>
 
-<section id="contact" style="border-bottom:none">
+<section class="page" id="contact">
   <h2>Contact</h2>
   <p>Happy to talk with engineers, students, or anyone interested in mechanical systems and building things.</p>
   <p>Email: <a href="mailto:scartu200909@gmail.com">scartu200909@gmail.com</a><br>
   GitHub: <a href="https://github.com/alexdifranco">github.com/alexdifranco</a><br>
   LinkedIn: <a href="https://www.linkedin.com/in/alexander-difranco-922452418">linkedin.com/in/alexander-difranco</a><br>
   School: Eastchester High School, NY, Class of 2027</p>
+
+  <p class="next"><a class="button" href="#" onclick="showPage('home'); return false;">Back to home</a></p>
 </section>
 
 <footer>Alex DiFranco, 2026</footer>
+
+<div id="viewer" onclick="closePhoto()"><img id="viewer-img" src="" alt=""></div>
+
+<script>
+function showPage(name) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].style.display = 'none';
+  }
+  document.getElementById(name).style.display = 'block';
+
+  var links = document.querySelectorAll('nav a');
+  for (var j = 0; j < links.length; j++) {
+    links[j].classList.remove('current');
+    if (links[j].getAttribute('data-page') === name) {
+      links[j].classList.add('current');
+    }
+  }
+  window.scrollTo(0, 0);
+}
+showPage('home');
+
+function openPhoto(img) {
+  document.getElementById('viewer-img').src = img.src;
+  document.getElementById('viewer').style.display = 'flex';
+}
+function closePhoto() {
+  document.getElementById('viewer').style.display = 'none';
+}
+document.onkeydown = function (e) {
+  if (e.key === 'Escape') closePhoto();
+};
+</script>
 
 </body>
 </html>
