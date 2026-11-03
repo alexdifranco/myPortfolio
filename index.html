@@ -67,6 +67,13 @@ footer { text-align:center; color:var(--dim); padding:24px; }
 .gallery img, .photos img, .headshot { cursor:pointer; }
 #viewer { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.92); z-index:20; align-items:center; justify-content:center; cursor:pointer; }
 #viewer img { max-width:92%; max-height:92%; }
+@media (max-width:700px) {
+  nav { padding:10px 12px; justify-content:center; gap:8px; }
+  .brand { font-size:1.1rem; }
+  .badge { width:32px; height:32px; font-size:.8rem; }
+  .links { width:100%; justify-content:center; gap:4px; }
+  .links a { padding:6px 11px; font-size:14px; }
+}
 </style>
 </head>
 <body>
@@ -143,6 +150,12 @@ footer { text-align:center; color:var(--dim); padding:24px; }
     <li><strong>Photography:</strong> I love photographing cars, cities, and nature, especially when I travel. More in the photography section.</li>
   </ul>
 
+  <h3>Classes</h3>
+  <p><strong>AP exam scores:</strong> Psychology 5; Computer Science A 4; Computer Science Principles 4; Environmental Science 4; English Language 4; US History 4; World History 3</p>
+  <p><strong>This year:</strong> AP Physics C (Mechanics and Electricity &amp; Magnetism), AP Calculus AB, Robotics &amp; Foundations in Electrical Engineering, AP English Literature, AP Business with Personal Finance, AP Macroeconomics, AP Italian Language and Culture, WISE Internship</p>
+  <p><strong>College courses:</strong> Precalculus at Iona University and Intermediate Italian at Westchester Community College (dual enrollment)</p>
+  <p><strong>Academics:</strong> GPA 96.9 / 100 (weighted). SAT 1420 superscore (770 Math, 650 Reading and Writing).</p>
+
   <h3>Honors</h3>
   <ul>
     <li>Bausch &amp; Lomb Science Award, University of Rochester (grade 11)</li>
@@ -151,12 +164,6 @@ footer { text-align:center; color:var(--dim); padding:24px; }
     <li>Rho Kappa National Social Studies Honor Society (grades 11, 12)</li>
     <li>National Honor Society (grade 12)</li>
   </ul>
-
-  <h3>Classes</h3>
-  <p><strong>AP exam scores:</strong> Psychology 5; Computer Science A 4; Computer Science Principles 4; Environmental Science 4; English Language 4; US History 4; World History 3</p>
-  <p><strong>This year:</strong> AP Physics C (Mechanics and Electricity &amp; Magnetism), AP Calculus AB, Robotics &amp; Foundations in Electrical Engineering, AP English Literature, AP Business with Personal Finance, AP Macroeconomics, AP Italian Language and Culture, WISE Internship</p>
-  <p><strong>College courses:</strong> Precalculus at Iona University and Intermediate Italian at Westchester Community College (dual enrollment)</p>
-  <p><strong>Academics:</strong> GPA 96.9 / 100 (weighted). SAT 1420 superscore (770 Math, 650 Reading and Writing).</p>
 
   <p class="next"><a class="button" href="#" onclick="showPage('project'); return false;">Next: Project</a></p>
 </section>
@@ -237,10 +244,9 @@ footer { text-align:center; color:var(--dim); padding:24px; }
 
 <section class="page" id="code">
   <h2>Dyno code</h2>
-  <p class="dim">The actual Arduino code behind each version. Click one to open it.</p>
+  <p class="dim">The actual Arduino code behind each version.</p>
 
-  <details>
-    <summary>V1: just testing the sensor (dyno_v1.ino)</summary>
+  <h3 style="margin-top:40px">V1: just testing the sensor (dyno_v1.ino)</h3>
     <p>This isn't even a real dyno sketch, it's literally just checking if the Hall sensor works. I'd pass a magnet over it and watch the Serial output flip between ON and OFF. This is also how I learned that only one side of the magnet actually triggers the sensor. Flip it around and it does nothing.</p>
     <pre>const int hallPin = 2;
 
@@ -258,10 +264,9 @@ void loop() {
 
   delay(100);
 }</pre>
-  </details>
+  
 
-  <details>
-    <summary>V2: Hall sensor RPM and speed reader (dyno_v2.ino)</summary>
+  <h3 style="margin-top:40px">V2: Hall sensor RPM and speed reader (dyno_v2.ino)</h3>
     <p>Reads pulses off the Hall sensor, turns them into RPM and MPH, and tracks a full run on its own. An LED lights up while it's running and switches over once the wheel's been still for 2 seconds, so I get max/average stats per run without touching a laptop.</p>
     <pre>const int hallPin = 2;
 
@@ -394,10 +399,9 @@ void loop() {
 void countPulse() {
   pulseCount++;
 }</pre>
-  </details>
+  
 
-  <details>
-    <summary>V3: roller dyno with auto run detection (dyno_v3.ino)</summary>
+  <h3 style="margin-top:40px">V3: roller dyno with auto run detection (dyno_v3.ino)</h3>
     <p>Rewrote this for the roller rig. A run starts on its own the second it picks up a Hall signal, throws out the first 5 seconds (that's just spin-up), and reports average/max RPM and MPH once the roller's been still for 2 seconds or 30 seconds have passed, whichever comes first.</p>
     <pre>const int hallPin = 2;
 
@@ -664,7 +668,7 @@ void countPulse() {
 
   pulseCount++;
 }</pre>
-  </details>
+  
 
   <p class="next"><a class="button" href="#" onclick="showPage('photography'); return false;">Next: Photography</a></p>
 </section>
@@ -679,7 +683,7 @@ void countPulse() {
 
 <section class="page" id="contact">
   <h2>Contact</h2>
-  <p>Happy to talk with engineers, students, or anyone interested in mechanical systems and building things.</p>
+  <p>Happy to talk with engineers, students, or anyone interested building things.</p>
   <p>Email: <a href="mailto:scartu200909@gmail.com">scartu200909@gmail.com</a><br>
   GitHub: <a href="https://github.com/alexdifranco">github.com/alexdifranco</a><br>
   LinkedIn: <a href="https://www.linkedin.com/in/alexander-difranco-922452418">linkedin.com/in/alexander-difranco</a><br>
@@ -688,7 +692,7 @@ void countPulse() {
   <p class="next"><a class="button" href="#" onclick="showPage('home'); return false;">Back to home</a></p>
 </section>
 
-<footer>Alex DiFranco, 2026</footer>
+<footer>Alexander DiFranco -- 2026</footer>
 
 <div id="viewer" onclick="closePhoto()"><img id="viewer-img" src="" alt=""></div>
 
